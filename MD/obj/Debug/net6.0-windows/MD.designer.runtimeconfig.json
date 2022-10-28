@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\rafae\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\rafae\\.nuget\\packages"
+      "C:\\Users\\GUEVARA-JARQUIN\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\GUEVARA-JARQUIN\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

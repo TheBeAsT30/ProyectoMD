@@ -11,6 +11,7 @@ namespace MD
     {
         public static Color PanelPrincipal;
         public static Color PanelSuperior;
+        public static Color PanelTemas;
         public static Color BotonesP;
         public static Color BotonesS;
         public static Color Fuente;
@@ -18,12 +19,13 @@ namespace MD
         public static Color PanelLateral;
         public static Color BackImagen;
         //Amarillo
-        private static readonly Color PanelSD = Color.FromArgb(235,233,140);
-        private static readonly Color PanelPD = Color.FromArgb(219, 151, 63);
-        private static readonly Color PanelLD = Color.FromArgb(223, 172, 82);
-        private static readonly Color BackImagenD = Color.FromArgb(235, 233, 140);
-        private static readonly Color BotonesPD = Color.FromArgb(227, 192, 101);
-        private static readonly Color BotonesSD = Color.FromArgb(231, 213, 121);
+        private static readonly Color PanelSD = Color.FromArgb(58, 42, 5);
+        private static readonly Color PanelPD = Color.FromArgb(131, 104, 27);
+        private static readonly Color PanelTD = Color.FromArgb(131, 104, 27);
+        private static readonly Color PanelLD = Color.FromArgb(176, 152, 61);
+        private static readonly Color BackImagenD = Color.FromArgb(58, 42, 5);
+        private static readonly Color BotonesPD = Color.FromArgb(176, 152, 61);
+        private static readonly Color BotonesSD = Color.FromArgb(176, 152, 61);
         private static readonly Color FuenteD = Color.FromArgb(0, 0, 0);
         private static readonly Color FuenteAD = Color.FromArgb(210, 11, 3);
         //Negro
@@ -45,10 +47,11 @@ namespace MD
         private static readonly Color FuenteR = Color.FromArgb(255, 255, 255);
         private static readonly Color FuenteAR = Color.FromArgb(255, 0, 0);
         //Azul
-        private static readonly Color PanelSA = Color.FromArgb(30, 4, 213);
-        private static readonly Color PanelPA = Color.FromArgb(0, 0, 97);
-        private static readonly Color PanelLA = Color.FromArgb(18, 0, 184);
-        private static readonly Color BackImagenA = Color.FromArgb(30, 4, 213);
+        private static readonly Color PanelSA = Color.FromArgb(12, 47, 67);
+        private static readonly Color PanelPA = Color.FromArgb(45, 49, 85);
+        private static readonly Color PanelTA = Color.FromArgb(18, 60, 110);
+        private static readonly Color PanelLA = Color.FromArgb(18, 60, 110);
+        private static readonly Color BackImagenA = Color.FromArgb(12, 47, 67);
         private static readonly Color BotonesPA = Color.FromArgb(5, 0, 155);
         private static readonly Color BotonesSA = Color.FromArgb(0, 0, 126);
         private static readonly Color FuenteAzul = Color.FromArgb(255, 255, 255);
@@ -69,6 +72,7 @@ namespace MD
             {
                 PanelPrincipal = PanelPD;
                 PanelSuperior = PanelSD;
+                PanelTemas = PanelTD;
                 BotonesP = BotonesPD;
                 BotonesS = BotonesSD;
                 Fuente = FuenteD;

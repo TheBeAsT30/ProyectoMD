@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rafae\\source\\repos\\MD\\MD\\MD.csproj": {}
+    "C:\\Users\\GUEVARA-JARQUIN\\source\\repos\\Clon\\ProyectoMD\\MD\\MD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rafae\\source\\repos\\MD\\MD\\MD.csproj": {
+    "C:\\Users\\GUEVARA-JARQUIN\\source\\repos\\Clon\\ProyectoMD\\MD\\MD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rafae\\source\\repos\\MD\\MD\\MD.csproj",
+        "projectUniqueName": "C:\\Users\\GUEVARA-JARQUIN\\source\\repos\\Clon\\ProyectoMD\\MD\\MD.csproj",
         "projectName": "MD",
-        "projectPath": "C:\\Users\\rafae\\source\\repos\\MD\\MD\\MD.csproj",
-        "packagesPath": "C:\\Users\\rafae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rafae\\source\\repos\\MD\\MD\\obj\\",
+        "projectPath": "C:\\Users\\GUEVARA-JARQUIN\\source\\repos\\Clon\\ProyectoMD\\MD\\MD.csproj",
+        "packagesPath": "C:\\Users\\GUEVARA-JARQUIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\GUEVARA-JARQUIN\\source\\repos\\Clon\\ProyectoMD\\MD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rafae\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\GUEVARA-JARQUIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[5.15.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -102,7 +102,7 @@ namespace MD
         {
             if (Contraseña.Text == contraseñaa && Usuario.Text == usuarioo)
             {
-                Principal frm = new Principal();
+                Form_principal frm = new Form_principal();
                 frm.Show();
                 this.Hide();
             }

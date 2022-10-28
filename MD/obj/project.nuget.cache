@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zA+9B/39/6twObaVRqoWeNk7f2LSfbrPBo7uhtRTFm0d3GdzTgZjcUBaSkhssgcp3SI+w7uXm1xhuNRwc/NYNQ==",
+  "dgSpecHash": "EYC4NhX4vc/jWqPm/MiApYniNWY8wknJHMnFQrDs5gQl03WDUTug9H1p4H8rnc+FCKn9uFuSNGEe5KDhLXKhYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rafae\\source\\repos\\MD\\MD\\MD.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\GUEVARA-JARQUIN\\source\\repos\\Clon\\ProyectoMD\\MD\\MD.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GUEVARA-JARQUIN\\.nuget\\packages\\fontawesome.sharp\\5.15.4\\fontawesome.sharp.5.15.4.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -59,9 +59,9 @@
             // Cerrar
             // 
             this.Cerrar.BackColor = System.Drawing.Color.Transparent;
-            this.Cerrar.BackgroundImage = global::MD.Properties.Resources.pngwing_com;
+            this.Cerrar.BackgroundImage = global::MD.Properties.Resources.Close;
             this.Cerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Cerrar.Image = global::MD.Properties.Resources.pngwing_com;
+            this.Cerrar.Image = global::MD.Properties.Resources.Close;
             this.Cerrar.Location = new System.Drawing.Point(700, 0);
             this.Cerrar.Name = "Cerrar";
             this.Cerrar.Size = new System.Drawing.Size(38, 33);
@@ -98,7 +98,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = global::MD.Properties.Resources.kisspng_computer_icons_product_manuals_document_accellion_professional_development_5b1d57ad517cf4_7595652215286496453338;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Image = global::MD.Properties.Resources.pngwing_com;
+            this.pictureBox3.Image = global::MD.Properties.Resources.Close;
             this.pictureBox3.Location = new System.Drawing.Point(3, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(38, 33);
@@ -108,9 +108,9 @@
             // Minimizar
             // 
             this.Minimizar.BackColor = System.Drawing.Color.Transparent;
-            this.Minimizar.BackgroundImage = global::MD.Properties.Resources.pngwing_com__1_;
+            this.Minimizar.BackgroundImage = global::MD.Properties.Resources.Minimize;
             this.Minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Minimizar.Image = global::MD.Properties.Resources.pngwing_com;
+            this.Minimizar.Image = global::MD.Properties.Resources.Minimize;
             this.Minimizar.Location = new System.Drawing.Point(656, 0);
             this.Minimizar.Name = "Minimizar";
             this.Minimizar.Size = new System.Drawing.Size(38, 33);
