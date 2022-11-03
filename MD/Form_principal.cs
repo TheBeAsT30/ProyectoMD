@@ -87,9 +87,9 @@ namespace MD
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {                   
-            if (Variables.Opcion == "Yellow")
+            if (Variables.Opcion == "Coffe")
             {
-                Properties.Settings.Default["Tema"] = "Amarillo";
+                Properties.Settings.Default["Tema"] = "Cafe";
                 Properties.Settings.Default.Save();
             }
             else if (Variables.Opcion == "Blue")
@@ -97,30 +97,31 @@ namespace MD
                 Properties.Settings.Default["Tema"] = "Azul";
                 Properties.Settings.Default.Save();
             }            
+            else if(Variables.Opcion == "Red")
+            {
+                Properties.Settings.Default["Tema"] = "Rojo";
+                Properties.Settings.Default.Save();
+            }
+            else if (Variables.Opcion == "Purple")
+            {
+                Properties.Settings.Default["Tema"] = "Morado";
+                Properties.Settings.Default.Save();
+            }
+            else if (Variables.Opcion == "Dark")
+            {
+                Properties.Settings.Default["Tema"] = "Oscuro";
+                Properties.Settings.Default.Save();
+            }
+            else if (Variables.Opcion == "White")
+            {
+                Properties.Settings.Default["Tema"] = "Claro";
+                Properties.Settings.Default.Save();
+            }
         }
 
-        private void ComboTema_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            #region -> Color
-            Properties.Settings.Default["Tema"] = ComboTema.Text;
-            Properties.Settings.Default.Save();
-            color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;        
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.Fuente;
-            Tema.BackColor = Colores.BotonesS;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            //Abrirformulario<Form_Test>(Variables.Opcion="Amarillo");
-
-            #endregion
-        }
 
         private void Tema_Click(object sender, EventArgs e)
         {
-            ComboTema.Visible = true;
         }
         #region
         private void Abrirformulario<MiForm>(string v) where MiForm : Form, new()
@@ -150,10 +151,11 @@ namespace MD
         }
         #endregion
 
-        private void buttonYellow_Click(object sender, EventArgs e)
+        #region ->Cambiar Colores
+        private void pictureBoxCafe_Click(object sender, EventArgs e)
         {
-            Variables.Opcion = "Yellow";
-            Properties.Settings.Default["Tema"] = "Amarillo";
+            Variables.Opcion = "Coffe";
+            Properties.Settings.Default["Tema"] = "Cafe";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
             Colores.ElegirColor(color);
@@ -165,8 +167,7 @@ namespace MD
             Cerrar.BackColor = Colores.BackImagen;
             Tema.BackColor = Colores.BotonesS;
         }
-
-        private void buttonBlue_Click(object sender, EventArgs e)
+        private void pictureBoxAzul_Click(object sender, EventArgs e)
         {
             Variables.Opcion = "Blue";
             Properties.Settings.Default["Tema"] = "Azul";
@@ -181,5 +182,157 @@ namespace MD
             Cerrar.BackColor = Colores.BackImagen;
             Tema.BackColor = Colores.BotonesS;
         }
+
+        private void pictureBoxMorado_Click(object sender, EventArgs e)
+        {
+            Variables.Opcion = "Purple";
+            Properties.Settings.Default["Tema"] = "Morado";
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.ForeColor = Colores.Fuente;
+            Minimizar.BackColor = Colores.BackImagen;
+            Cerrar.BackColor = Colores.BackImagen;
+            Tema.BackColor = Colores.BotonesS;
+        }
+
+        private void pictureBoxRojo_Click(object sender, EventArgs e)
+        {
+            Variables.Opcion = "Red";
+            Properties.Settings.Default["Tema"] = "Rojo";
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.ForeColor = Colores.Fuente;
+            Minimizar.BackColor = Colores.BackImagen;
+            Cerrar.BackColor = Colores.BackImagen;
+            Tema.BackColor = Colores.BotonesS;
+        }
+
+        private void pictureBoxOscuro_Click(object sender, EventArgs e)
+        {
+            Variables.Opcion = "Dark";
+            Properties.Settings.Default["Tema"] = "Oscuro";
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.ForeColor = Colores.Fuente;
+            Minimizar.BackColor = Colores.BackImagen;
+            Cerrar.BackColor = Colores.BackImagen;
+            Tema.BackColor = Colores.BotonesS;
+        }
+
+        private void pictureBoxClaro_Click(object sender, EventArgs e)
+        {
+            Variables.Opcion = "White";
+            Properties.Settings.Default["Tema"] = "Claro";
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.ForeColor = Colores.Fuente;
+            Minimizar.BackColor = Colores.BackImagen;
+            Cerrar.BackColor = Colores.BackImagen;
+            Tema.BackColor = Colores.BotonesS;
+        }       
+
+        private void pictureBoxCafe_MouseEnter(object sender, EventArgs e)
+        {
+            this.PanelCafe.Size = new System.Drawing.Size(181, 97);
+        }
+
+        private void pictureBoxCafe_MouseLeave(object sender, EventArgs e)
+        {
+            this.PanelCafe.Size = new System.Drawing.Size(164, 79);
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            this.PanelAzul.Size = new System.Drawing.Size(181, 97);
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            this.PanelAzul.Size = new System.Drawing.Size(164, 79);
+        }
+        private void pictureBoxMorado_MouseLeave(object sender, EventArgs e)
+        {
+            this.PanelMorado.Size = new System.Drawing.Size(164, 79);
+        }
+
+        private void pictureBoxMorado_MouseEnter(object sender, EventArgs e)
+        {
+            this.PanelMorado.Size = new System.Drawing.Size(181, 97);
+        }
+
+        private void pictureBoxRojo_MouseEnter(object sender, EventArgs e)
+        {
+            this.PanelRojo.Size = new System.Drawing.Size(181, 97);
+
+        }
+        private void pictureBoxRojo_MouseLeave(object sender, EventArgs e)
+        {
+            this.PanelRojo.Size = new System.Drawing.Size(164, 79);
+        }
+
+        private void pictureBoxOscuro_MouseEnter(object sender, EventArgs e)
+        {
+            this.PanelOscuro.Size = new System.Drawing.Size(181, 97);
+        }
+
+        private void pictureBoxOscuro_MouseLeave(object sender, EventArgs e)
+        {
+            this.PanelOscuro.Size = new System.Drawing.Size(164, 79);
+        }
+
+        private void pictureBoxClaro_MouseEnter(object sender, EventArgs e)
+        {
+            this.PanelClaro.Size = new System.Drawing.Size(181, 97);
+        }
+
+        private void pictureBoxClaro_MouseLeave(object sender, EventArgs e)
+        {
+            this.PanelClaro.Size = new System.Drawing.Size(164, 79);
+        }
+        #endregion
     }
 }
+
+/*            #region -> Color
+            Properties.Settings.Default["Tema"] = ComboTema.Text;
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;        
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.ForeColor = Colores.Fuente;
+            Tema.BackColor = Colores.BotonesS;
+            Minimizar.BackColor = Colores.BackImagen;
+            Cerrar.BackColor = Colores.BackImagen;
+            if (ComboTema.Text == "Amarillo")
+            {
+                //panelP2.SendToBack();
+                //panelP2.BringToFront();
+                iconPictureBox1.SendToBack();
+                PanelP.BringToFront();
+                PanelL.BringToFront();
+                PanelS.BringToFront();
+                ComboTema.SendToBack();
+                //buttonBlue.BringToFront();
+                //buttonYellow.BringToFront();
+            }
+            //Abrirformulario<Form_Test>(Variables.Opcion="Amarillo");
+
+            #endregion*/

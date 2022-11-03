@@ -18,23 +18,22 @@ namespace MD
         public static Color FuenteA;
         public static Color PanelLateral;
         public static Color BackImagen;
-        //Amarillo
-        private static readonly Color PanelSD = Color.FromArgb(58, 42, 5);
-        private static readonly Color PanelPD = Color.FromArgb(131, 104, 27);
-        private static readonly Color PanelTD = Color.FromArgb(131, 104, 27);
-        private static readonly Color PanelLD = Color.FromArgb(176, 152, 61);
-        private static readonly Color BackImagenD = Color.FromArgb(58, 42, 5);
-        private static readonly Color BotonesPD = Color.FromArgb(176, 152, 61);
-        private static readonly Color BotonesSD = Color.FromArgb(176, 152, 61);
-        private static readonly Color FuenteD = Color.FromArgb(0, 0, 0);
-        private static readonly Color FuenteAD = Color.FromArgb(210, 11, 3);
-        //Negro
+        //Cafe
+        private static readonly Color PanelSC = Color.FromArgb(58, 42, 5);
+        private static readonly Color PanelPC = Color.FromArgb(131, 104, 27);
+        private static readonly Color PanelTC = Color.FromArgb(131, 104, 27);
+        private static readonly Color PanelLC = Color.FromArgb(176, 152, 61);
+        private static readonly Color BackImagenC = Color.FromArgb(58, 42, 5);   
+        private static readonly Color BotonesSC = Color.FromArgb(209, 178, 91);
+        private static readonly Color FuenteC = Color.FromArgb(0, 0, 0);
+        private static readonly Color FuenteAC = Color.FromArgb(210, 11, 3);
+        //Oscuro
         private static readonly Color PanelSN = Color.FromArgb(0, 0, 0);
-        private static readonly Color PanelPN = Color.FromArgb(72, 67, 66);
-        private static readonly Color PanelLN = Color.FromArgb(35, 30, 29);
-        private static readonly Color BackImagenN = Color.FromArgb(255, 255, 255);
-        private static readonly Color BotonesPN = Color.FromArgb(51, 34, 193);
-        private static readonly Color BotonesSN = Color.FromArgb(62, 43, 223);
+        private static readonly Color PanelPN = Color.FromArgb(35, 30, 29);
+        private static readonly Color PanelLN = Color.FromArgb(72, 67, 66);
+        private static readonly Color BackImagenN = Color.FromArgb(0, 0, 0);
+        //private static readonly Color BotonesPN = Color.FromArgb(51, 34, 193);
+        private static readonly Color BotonesSN = Color.FromArgb(128, 118, 117);
         private static readonly Color FuenteN = Color.FromArgb(255, 255, 255);
         private static readonly Color FuenteAN = Color.FromArgb(210, 11, 3);
         //Rojo
@@ -48,8 +47,7 @@ namespace MD
         private static readonly Color FuenteAR = Color.FromArgb(255, 0, 0);
         //Azul
         private static readonly Color PanelSA = Color.FromArgb(12, 47, 67);
-        private static readonly Color PanelPA = Color.FromArgb(45, 49, 85);
-        private static readonly Color PanelTA = Color.FromArgb(18, 60, 110);
+        private static readonly Color PanelPA = Color.FromArgb(45, 49, 85);    
         private static readonly Color PanelLA = Color.FromArgb(18, 60, 110);
         private static readonly Color BackImagenA = Color.FromArgb(12, 47, 67);
         private static readonly Color BotonesPA = Color.FromArgb(5, 0, 155);
@@ -65,26 +63,34 @@ namespace MD
         private static readonly Color FuenteM = Color.FromArgb(255, 255, 255);
         private static readonly Color FuenteAM = Color.FromArgb(210, 11, 3);
         private static readonly Color BackImagenM = Color.FromArgb(101, 7, 100);
+        //Claro
+        private static readonly Color PanelSBL = Color.FromArgb(229, 229, 229);
+        private static readonly Color PanelPBL = Color.FromArgb(248, 248, 248);
+        private static readonly Color PanelLBL = Color.FromArgb(219, 221, 212);
+        private static readonly Color BotonesBL = Color.FromArgb(248, 248, 248);
+        private static readonly Color FuenteBL = Color.FromArgb(255, 255, 255);
+        //private static readonly Color FuenteABL = Color.FromArgb(210, 11, 3);
+        private static readonly Color BackImagenVL = Color.FromArgb(229, 229, 229);
+
         #region ->Metodo
         public static void ElegirColor(string tema)
         {
-            if (tema == "Amarillo")
+            if (tema == "Cafe")
             {
-                PanelPrincipal = PanelPD;
-                PanelSuperior = PanelSD;
-                PanelTemas = PanelTD;
-                BotonesP = BotonesPD;
-                BotonesS = BotonesSD;
-                Fuente = FuenteD;
-                FuenteA = FuenteAD;
-                PanelLateral = PanelLD;
-                BackImagen = BackImagenD;
+                PanelPrincipal = PanelPC;
+                PanelSuperior = PanelSC;
+                PanelTemas = PanelTC;               
+                BotonesS = BotonesSC;
+                Fuente = FuenteC;
+                FuenteA = FuenteAC;
+                PanelLateral = PanelLC;
+                BackImagen = BackImagenC;
             }
-            else if (tema == "Negro")
+            else if (tema == "Oscuro")
             {
                 PanelPrincipal = PanelPN;
                 PanelSuperior = PanelSN;
-                BotonesP = BotonesPN;
+                //BotonesP = BotonesPN;
                 BotonesS = BotonesSN;
                 Fuente = FuenteN;
                 FuenteA = FuenteAN;
@@ -123,6 +129,17 @@ namespace MD
                 FuenteA = FuenteAA;
                 PanelLateral = PanelLA;
                 BackImagen = BackImagenA;
+            }
+            else if (tema == "Claro")
+            {
+                PanelPrincipal = PanelPBL;
+                PanelSuperior = PanelSBL;
+                //BotonesP = BotonesBL;
+                BotonesS = BotonesBL;
+                //Fuente = FuenteAzul;
+                //FuenteA = FuenteAA;
+                PanelLateral = PanelLBL;
+                BackImagen = BackImagenVL;
             }
         }
         #endregion
