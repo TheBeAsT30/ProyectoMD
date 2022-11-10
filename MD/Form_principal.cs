@@ -30,11 +30,11 @@ namespace MD
         private void Principal_Load(object sender, EventArgs e)
         {
             #region ->Color
-             Colores.ElegirColor(color);
+            Colores.ElegirColor(color);
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
             PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.Fuente;
+            Tema.ForeColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.BackImagen;
             Cerrar.BackColor = Colores.BackImagen;
             Tema.BackColor = Colores.BotonesS;                    
@@ -86,7 +86,7 @@ namespace MD
         }
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
-        {                   
+        {
             if (Variables.Opcion == "Coffe")
             {
                 Properties.Settings.Default["Tema"] = "Cafe";
@@ -117,11 +117,46 @@ namespace MD
                 Properties.Settings.Default["Tema"] = "Claro";
                 Properties.Settings.Default.Save();
             }
+            else if (Variables.Opcion == "light_blue")
+            {
+                Properties.Settings.Default["Tema"] = "Celeste";
+                Properties.Settings.Default.Save();
+            }
+            else if (Variables.Opcion == "Pink")
+            {
+                Properties.Settings.Default["Tema"] = "Rosa";
+                Properties.Settings.Default.Save();
+            }
+            else if (Variables.Opcion == "Green")
+            {
+                Properties.Settings.Default["Tema"] = "Verde";
+                Properties.Settings.Default.Save();
+            }
         }
 
 
         private void Tema_Click(object sender, EventArgs e)
         {
+            Variables.Opcion = "light_blue";
+            Properties.Settings.Default["Tema"] = "Celeste";
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.ForeColor = Colores.FuenteC;
+            Minimizar.BackColor = Colores.BackImagen;
+            Cerrar.BackColor = Colores.BackImagen;
+            Tema.BackColor = Colores.BotonesS;
+            Tema.Visible = false;
+            pictureBoxAzul.Visible = false;
+            pictureBoxCafe.Visible = false;
+            pictureBoxClaro.Visible = false;
+            pictureBoxMorado.Visible = false;
+            pictureBoxOscuro.Visible = false;
+            pictureBoxRojo.Visible = false;
+            iconPictureBox1.Visible = false;
         }
         #region
         private void Abrirformulario<MiForm>(string v) where MiForm : Form, new()
@@ -162,7 +197,7 @@ namespace MD
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
             PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.Fuente;
+            Tema.ForeColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.BackImagen;
             Cerrar.BackColor = Colores.BackImagen;
             Tema.BackColor = Colores.BotonesS;
@@ -177,7 +212,7 @@ namespace MD
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
             PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.Fuente;
+            Tema.ForeColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.BackImagen;
             Cerrar.BackColor = Colores.BackImagen;
             Tema.BackColor = Colores.BotonesS;
@@ -193,7 +228,7 @@ namespace MD
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
             PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.Fuente;
+            Tema.ForeColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.BackImagen;
             Cerrar.BackColor = Colores.BackImagen;
             Tema.BackColor = Colores.BotonesS;
@@ -209,7 +244,7 @@ namespace MD
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
             PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.Fuente;
+            Tema.ForeColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.BackImagen;
             Cerrar.BackColor = Colores.BackImagen;
             Tema.BackColor = Colores.BotonesS;
@@ -225,7 +260,7 @@ namespace MD
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
             PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.Fuente;
+            Tema.ForeColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.BackImagen;
             Cerrar.BackColor = Colores.BackImagen;
             Tema.BackColor = Colores.BotonesS;
@@ -241,71 +276,228 @@ namespace MD
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
             PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.Fuente;
+            Tema.ForeColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.BackImagen;
             Cerrar.BackColor = Colores.BackImagen;
             Tema.BackColor = Colores.BotonesS;
-        }       
+        }
 
+        private void pictureBoxCeleste_Click(object sender, EventArgs e)
+        {
+            Variables.Opcion = "light_blue";
+            Properties.Settings.Default["Tema"] = "Celeste";
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.ForeColor = Colores.FuenteC;
+            Minimizar.BackColor = Colores.BackImagen;
+            Cerrar.BackColor = Colores.BackImagen;
+            Tema.BackColor = Colores.BotonesS;
+        }
+
+        private void pictureBoxRosa_Click(object sender, EventArgs e)
+        {
+            Variables.Opcion = "Pink";
+            Properties.Settings.Default["Tema"] = "Rosa";
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.ForeColor = Colores.FuenteC;
+            Minimizar.BackColor = Colores.BackImagen;
+            Cerrar.BackColor = Colores.BackImagen;
+            Tema.BackColor = Colores.BotonesS;
+        }
+        private void pictureBoxVerde_Click(object sender, EventArgs e)
+        {
+            Variables.Opcion = "Green";
+            Properties.Settings.Default["Tema"] = "Verde";
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.ForeColor = Colores.FuenteC;
+            Minimizar.BackColor = Colores.BackImagen;
+            Cerrar.BackColor = Colores.BackImagen;
+            Tema.BackColor = Colores.BotonesS;
+        }
         private void pictureBoxCafe_MouseEnter(object sender, EventArgs e)
         {
-            this.PanelCafe.Size = new System.Drawing.Size(181, 97);
+            this.PanelCafe.Size = new Size(181, 97);
+            this.pictureBoxCafe.Size = new Size(171, 87);
+            if(Variables.Opcion == "White")
+            {
+                PanelCafe.BackColor = Color.Black;
+            }
+            else PanelCafe.BackColor = Color.WhiteSmoke;
         }
 
         private void pictureBoxCafe_MouseLeave(object sender, EventArgs e)
         {
-            this.PanelCafe.Size = new System.Drawing.Size(164, 79);
+            this.PanelCafe.Size = new Size(168, 84);
+            this.pictureBoxCafe.Size = new Size(160, 75);
+            PanelCafe.BackColor = Color.Transparent;
         }
 
         private void pictureBox1_MouseEnter(object sender, EventArgs e)
         {
-            this.PanelAzul.Size = new System.Drawing.Size(181, 97);
+            this.PanelAzul.Size = new Size(181, 97);
+            this.pictureBoxAzul.Size = new Size(171, 87);
+            if(Variables.Opcion == "White")
+            {
+                PanelAzul.BackColor = Color.Black;
+            }
+            else PanelAzul.BackColor = Color.WhiteSmoke;
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            this.PanelAzul.Size = new System.Drawing.Size(164, 79);
+            this.PanelAzul.Size = new Size(168, 84);
+            this.pictureBoxAzul.Size = new Size(160, 75);
+            PanelAzul.BackColor = Color.Transparent;
         }
         private void pictureBoxMorado_MouseLeave(object sender, EventArgs e)
         {
-            this.PanelMorado.Size = new System.Drawing.Size(164, 79);
+            this.PanelMorado.Size = new Size(168, 84);
+            this.pictureBoxMorado.Size = new Size(160, 75);
+            PanelMorado.BackColor = Color.Transparent;
         }
 
         private void pictureBoxMorado_MouseEnter(object sender, EventArgs e)
         {
-            this.PanelMorado.Size = new System.Drawing.Size(181, 97);
+            this.PanelMorado.Size = new Size(181, 97);
+            this.pictureBoxMorado.Size = new Size(171, 87);
+            if (Variables.Opcion == "White")
+            {
+                PanelMorado.BackColor = Color.Black;
+            }
+            else PanelMorado.BackColor = Color.WhiteSmoke;
+
         }
 
         private void pictureBoxRojo_MouseEnter(object sender, EventArgs e)
         {
-            this.PanelRojo.Size = new System.Drawing.Size(181, 97);
+            this.PanelRojo.Size = new Size(181, 97);
+            this.pictureBoxRojo.Size = new Size(171, 87);
+            if (Variables.Opcion == "White")
+            {
+                PanelRojo.BackColor = Color.Black;
+            }
+            else PanelRojo.BackColor = Color.WhiteSmoke;
+
 
         }
         private void pictureBoxRojo_MouseLeave(object sender, EventArgs e)
         {
-            this.PanelRojo.Size = new System.Drawing.Size(164, 79);
+            this.PanelRojo.Size = new Size(168, 84);
+            this.pictureBoxRojo.Size = new Size(160, 75);
+            PanelRojo.BackColor = Color.Transparent;
         }
 
         private void pictureBoxOscuro_MouseEnter(object sender, EventArgs e)
         {
-            this.PanelOscuro.Size = new System.Drawing.Size(181, 97);
+            this.PanelOscuro.Size = new Size(181, 97);
+            this.pictureBoxOscuro.Size = new Size(171, 87);
+            if (Variables.Opcion == "White")
+            {
+                PanelOscuro.BackColor = Color.Black;
+            }
+            else PanelOscuro.BackColor = Color.WhiteSmoke;
         }
 
         private void pictureBoxOscuro_MouseLeave(object sender, EventArgs e)
         {
-            this.PanelOscuro.Size = new System.Drawing.Size(164, 79);
+            this.PanelOscuro.Size = new Size(168, 84);
+            this.pictureBoxOscuro.Size = new Size(160, 75);
+            PanelOscuro.BackColor = Color.Transparent;
         }
 
         private void pictureBoxClaro_MouseEnter(object sender, EventArgs e)
         {
-            this.PanelClaro.Size = new System.Drawing.Size(181, 97);
+            this.PanelClaro.Size = new Size(181, 97);
+            this.pictureBoxClaro.Size = new Size(171, 87);
+            if(Variables.Opcion == "White")
+            {
+                PanelClaro.BackColor = Color.Black;
+            }
+            else PanelClaro.BackColor = Color.WhiteSmoke;
         }
 
         private void pictureBoxClaro_MouseLeave(object sender, EventArgs e)
         {
-            this.PanelClaro.Size = new System.Drawing.Size(164, 79);
+            this.PanelClaro.Size = new Size(168, 84);
+            this.pictureBoxOscuro.Size = new Size(160, 75);
+            PanelClaro.BackColor = Color.Transparent;
         }
+
+        private void pictureBoxCeleste_MouseEnter(object sender, EventArgs e)
+        {
+            this.PanelCeleste.Size = new Size(181, 97);
+            this.pictureBoxCeleste.Size = new Size(171, 87);
+            if (Variables.Opcion == "White")
+            {
+                PanelCeleste.BackColor = Color.Black;
+            }
+            else PanelCeleste.BackColor = Color.WhiteSmoke;
+        }
+
+        private void pictureBoxCeleste_MouseLeave(object sender, EventArgs e)
+        {
+            this.PanelCeleste.Size = new Size(168, 84);
+            this.pictureBoxCeleste.Size = new Size(160, 75);
+            PanelCeleste.BackColor = Color.Transparent;
+        }
+
+        private void pictureBoxRosa_MouseEnter(object sender, EventArgs e)
+        {
+            this.PanelRosa.Size = new Size(181, 97);
+            this.pictureBoxRosa.Size = new Size(171, 87);
+            if (Variables.Opcion == "White")
+            {
+                PanelRosa.BackColor = Color.Black;
+            }
+            else PanelRosa.BackColor = Color.WhiteSmoke;
+        }
+
+        private void pictureBoxRosa_MouseLeave(object sender, EventArgs e)
+        {
+            this.PanelRosa.Size = new Size(168, 84);
+            this.pictureBoxRosa.Size = new Size(160, 75);
+            PanelRosa.BackColor = Color.Transparent;
+        }
+
+        private void pictureBoxVerde_MouseEnter(object sender, EventArgs e)
+        {
+            this.PanelVerde.Size = new Size(181, 97);
+            this.pictureBoxVerde.Size = new Size(171, 87);
+            if (Variables.Opcion == "White")
+            {
+                PanelVerde.BackColor = Color.Black;
+            }
+            else PanelVerde.BackColor = Color.WhiteSmoke;
+        }
+
+        private void pictureBoxVerde_MouseLeave(object sender, EventArgs e)
+        {
+            this.PanelVerde.Size = new Size(168, 84);
+            this.pictureBoxVerde.Size = new Size(160, 75);
+            PanelVerde.BackColor = Color.Transparent;
+        }
+
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estas seguros de cerrar el formulario?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close(); Form_login login = new Form_login(); login.Show();
+        }
     }
 }
 

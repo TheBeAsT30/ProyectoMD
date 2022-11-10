@@ -14,8 +14,8 @@ namespace MD
         public static Color PanelTemas;
         public static Color BotonesP;
         public static Color BotonesS;
-        public static Color Fuente;
-        public static Color FuenteA;
+        public static Color FuenteC;
+        public static Color FuenteO;
         public static Color PanelLateral;
         public static Color BackImagen;
         //Cafe
@@ -25,14 +25,13 @@ namespace MD
         private static readonly Color PanelLC = Color.FromArgb(176, 152, 61);
         private static readonly Color BackImagenC = Color.FromArgb(58, 42, 5);   
         private static readonly Color BotonesSC = Color.FromArgb(209, 178, 91);
-        private static readonly Color FuenteC = Color.FromArgb(0, 0, 0);
+        private static readonly Color FuenteNC = Color.FromArgb(0, 0, 0);
         private static readonly Color FuenteAC = Color.FromArgb(210, 11, 3);
         //Oscuro
         private static readonly Color PanelSN = Color.FromArgb(0, 0, 0);
         private static readonly Color PanelPN = Color.FromArgb(35, 30, 29);
         private static readonly Color PanelLN = Color.FromArgb(72, 67, 66);
         private static readonly Color BackImagenN = Color.FromArgb(0, 0, 0);
-        //private static readonly Color BotonesPN = Color.FromArgb(51, 34, 193);
         private static readonly Color BotonesSN = Color.FromArgb(128, 118, 117);
         private static readonly Color FuenteN = Color.FromArgb(255, 255, 255);
         private static readonly Color FuenteAN = Color.FromArgb(210, 11, 3);
@@ -50,27 +49,49 @@ namespace MD
         private static readonly Color PanelPA = Color.FromArgb(45, 49, 85);    
         private static readonly Color PanelLA = Color.FromArgb(18, 60, 110);
         private static readonly Color BackImagenA = Color.FromArgb(12, 47, 67);
-        private static readonly Color BotonesPA = Color.FromArgb(5, 0, 155);
-        private static readonly Color BotonesSA = Color.FromArgb(0, 0, 126);
+        private static readonly Color BotonesSA = Color.FromArgb(12, 47, 67);
         private static readonly Color FuenteAzul = Color.FromArgb(255, 255, 255);
         private static readonly Color FuenteAA = Color.FromArgb(210, 11, 3);
         //Morado
         private static readonly Color PanelSM = Color.FromArgb(101, 7, 100);
         private static readonly Color PanelPM = Color.FromArgb(25, 0, 25);
         private static readonly Color PanelLM = Color.FromArgb(82, 0, 81);
-        private static readonly Color BotonesPM = Color.FromArgb(63, 0, 62);
         private static readonly Color BotonesSM = Color.FromArgb(44, 0, 44);
         private static readonly Color FuenteM = Color.FromArgb(255, 255, 255);
         private static readonly Color FuenteAM = Color.FromArgb(210, 11, 3);
         private static readonly Color BackImagenM = Color.FromArgb(101, 7, 100);
+        //Verde
+        private static readonly Color PanelSV = Color.FromArgb(36, 115, 71);
+        private static readonly Color PanelPV = Color.FromArgb(18, 52, 45);
+        private static readonly Color PanelLV = Color.FromArgb(18, 75, 55);
+        private static readonly Color BotonesSV = Color.FromArgb(36, 115, 71);
+        private static readonly Color BackImagenV = Color.FromArgb(36, 115, 71);
+        private static readonly Color FuenteV = Color.FromArgb(255, 255, 255);
+        private static readonly Color FuenteV2 = Color.FromArgb(0, 0, 0);
+        //Rosa
+        private static readonly Color PanelSRS = Color.FromArgb(98, 41, 90);
+        private static readonly Color PanelPRS = Color.FromArgb(100, 22, 65);
+        private static readonly Color PanelLRS = Color.FromArgb(143, 50, 102);
+        private static readonly Color BotonesSRS = Color.FromArgb(98, 41, 90);
+        private static readonly Color BackImagenRS = Color.FromArgb(98, 41, 90);
+        private static readonly Color FuenteRo = Color.FromArgb(255, 255, 255);
+        private static readonly Color FuenteRo2 = Color.FromArgb(0, 0, 0);
+        //Celeste
+        private static readonly Color PanelSCE = Color.FromArgb(10, 102, 155);
+        private static readonly Color PanelPCE = Color.FromArgb(12, 72, 123);
+        private static readonly Color PanelLCE = Color.FromArgb(8, 152, 202);
+        private static readonly Color BotonesSCE = Color.FromArgb(10, 102, 155);
+        private static readonly Color BackImagenCE = Color.FromArgb(10, 102, 155);
+        private static readonly Color FuenteCE = Color.FromArgb(255, 255, 255);
+        private static readonly Color FuenteCE2 = Color.FromArgb(0, 0, 0);
         //Claro
         private static readonly Color PanelSBL = Color.FromArgb(229, 229, 229);
         private static readonly Color PanelPBL = Color.FromArgb(248, 248, 248);
         private static readonly Color PanelLBL = Color.FromArgb(219, 221, 212);
         private static readonly Color BotonesBL = Color.FromArgb(248, 248, 248);
-        private static readonly Color FuenteBL = Color.FromArgb(255, 255, 255);
-        //private static readonly Color FuenteABL = Color.FromArgb(210, 11, 3);
         private static readonly Color BackImagenVL = Color.FromArgb(229, 229, 229);
+        private static readonly Color FuenteCA = Color.FromArgb(255, 255, 255);
+        private static readonly Color FuenteCA2 = Color.FromArgb(0, 0, 0);
 
         #region ->Metodo
         public static void ElegirColor(string tema)
@@ -81,8 +102,8 @@ namespace MD
                 PanelSuperior = PanelSC;
                 PanelTemas = PanelTC;               
                 BotonesS = BotonesSC;
-                Fuente = FuenteC;
-                FuenteA = FuenteAC;
+                FuenteC = FuenteNC;
+                FuenteO = FuenteAC;
                 PanelLateral = PanelLC;
                 BackImagen = BackImagenC;
             }
@@ -92,8 +113,8 @@ namespace MD
                 PanelSuperior = PanelSN;
                 //BotonesP = BotonesPN;
                 BotonesS = BotonesSN;
-                Fuente = FuenteN;
-                FuenteA = FuenteAN;
+                FuenteC = FuenteN;
+                FuenteO = FuenteAN;
                 PanelLateral = PanelLN;
                 BackImagen = BackImagenN;
             }
@@ -101,10 +122,9 @@ namespace MD
             {
                 PanelPrincipal = PanelPM;
                 PanelSuperior = PanelSM;
-                BotonesP = BotonesPM;
                 BotonesS = BotonesSM;
-                Fuente = FuenteM;
-                FuenteA = FuenteAM;
+                FuenteC = FuenteM;
+                FuenteO = FuenteAM;
                 PanelLateral = PanelLM;
                 BackImagen = BackImagenM;
             }
@@ -112,10 +132,10 @@ namespace MD
             {
                 PanelPrincipal = PanelPR;
                 PanelSuperior = PanelSR;
-                BotonesP = BotonesPR;
+                //BotonesP = BotonesPR;
                 BotonesS = BotonesSR;
-                Fuente = FuenteR;
-                FuenteA = FuenteAR;
+                FuenteC = FuenteR;
+                FuenteO = FuenteAR;
                 PanelLateral = PanelLR;
                 BackImagen = BackImagenR;
             }
@@ -123,21 +143,50 @@ namespace MD
             {
                 PanelPrincipal = PanelPA;
                 PanelSuperior = PanelSA;
-                BotonesP = BotonesPA;
+                //BotonesP = BotonesPA;
                 BotonesS = BotonesSA;
-                Fuente = FuenteAzul;
-                FuenteA = FuenteAA;
+                FuenteC = FuenteAzul;
+                FuenteO = FuenteAA;
                 PanelLateral = PanelLA;
                 BackImagen = BackImagenA;
+            }
+            else if (tema == "Verde")
+            {
+                PanelPrincipal = PanelPV;
+                PanelSuperior = PanelSV;
+                BotonesS = BotonesSV;
+                PanelLateral = PanelLV;
+                BackImagen = BackImagenV;
+                FuenteC = FuenteV;
+                FuenteO = FuenteV2;
+            }
+            else if (tema == "Rosa")
+            {
+                PanelPrincipal = PanelPRS;
+                PanelSuperior = PanelSRS;
+                BotonesS = BotonesSRS;
+                PanelLateral = PanelLRS;
+                BackImagen = BackImagenRS;
+                FuenteC = FuenteRo;
+                FuenteO = FuenteRo2;
+            }
+            else if (tema == "Celeste")
+            {
+                PanelPrincipal = PanelPCE;
+                PanelSuperior = PanelSCE;
+                BotonesS = BotonesSCE;
+                PanelLateral = PanelLCE;
+                BackImagen = BackImagenCE;
+                FuenteC = FuenteCE;
+                FuenteO = FuenteCE2;
             }
             else if (tema == "Claro")
             {
                 PanelPrincipal = PanelPBL;
                 PanelSuperior = PanelSBL;
-                //BotonesP = BotonesBL;
                 BotonesS = BotonesBL;
-                //Fuente = FuenteAzul;
-                //FuenteA = FuenteAA;
+                FuenteC = FuenteCA;
+                FuenteO = FuenteCA2;
                 PanelLateral = PanelLBL;
                 BackImagen = BackImagenVL;
             }

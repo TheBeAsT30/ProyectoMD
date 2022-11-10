@@ -35,6 +35,12 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.Tema = new System.Windows.Forms.Button();
             this.PanelP = new System.Windows.Forms.Panel();
+            this.PanelVerde = new System.Windows.Forms.Panel();
+            this.pictureBoxVerde = new System.Windows.Forms.PictureBox();
+            this.PanelRosa = new System.Windows.Forms.Panel();
+            this.pictureBoxRosa = new System.Windows.Forms.PictureBox();
+            this.PanelCeleste = new System.Windows.Forms.Panel();
+            this.pictureBoxCeleste = new System.Windows.Forms.PictureBox();
             this.PanelClaro = new System.Windows.Forms.Panel();
             this.pictureBoxClaro = new System.Windows.Forms.PictureBox();
             this.PanelOscuro = new System.Windows.Forms.Panel();
@@ -47,12 +53,19 @@
             this.pictureBoxAzul = new System.Windows.Forms.PictureBox();
             this.PanelCafe = new System.Windows.Forms.Panel();
             this.pictureBoxCafe = new System.Windows.Forms.PictureBox();
+            this.buttonReturn = new System.Windows.Forms.Button();
             this.PanelS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cerrar)).BeginInit();
             this.PanelL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.PanelP.SuspendLayout();
+            this.PanelVerde.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVerde)).BeginInit();
+            this.PanelRosa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRosa)).BeginInit();
+            this.PanelCeleste.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCeleste)).BeginInit();
             this.PanelClaro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClaro)).BeginInit();
             this.PanelOscuro.SuspendLayout();
@@ -109,6 +122,7 @@
             // PanelL
             // 
             this.PanelL.BackColor = System.Drawing.Color.LightGray;
+            this.PanelL.Controls.Add(this.buttonReturn);
             this.PanelL.Controls.Add(this.iconPictureBox1);
             this.PanelL.Controls.Add(this.Tema);
             this.PanelL.Location = new System.Drawing.Point(-1, 40);
@@ -148,6 +162,9 @@
             // PanelP
             // 
             this.PanelP.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PanelP.Controls.Add(this.PanelVerde);
+            this.PanelP.Controls.Add(this.PanelRosa);
+            this.PanelP.Controls.Add(this.PanelCeleste);
             this.PanelP.Controls.Add(this.PanelClaro);
             this.PanelP.Controls.Add(this.PanelOscuro);
             this.PanelP.Controls.Add(this.PanelRojo);
@@ -161,21 +178,90 @@
             this.PanelP.TabIndex = 1;
             this.PanelP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelP_MouseMove);
             // 
+            // PanelVerde
+            // 
+            this.PanelVerde.BackColor = System.Drawing.Color.Transparent;
+            this.PanelVerde.Controls.Add(this.pictureBoxVerde);
+            this.PanelVerde.Location = new System.Drawing.Point(706, 350);
+            this.PanelVerde.Name = "PanelVerde";
+            this.PanelVerde.Size = new System.Drawing.Size(168, 84);
+            this.PanelVerde.TabIndex = 10;
+            // 
+            // pictureBoxVerde
+            // 
+            this.pictureBoxVerde.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxVerde.Image = global::MD.Properties.Resources.Verde1;
+            this.pictureBoxVerde.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxVerde.Name = "pictureBoxVerde";
+            this.pictureBoxVerde.Size = new System.Drawing.Size(160, 75);
+            this.pictureBoxVerde.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxVerde.TabIndex = 3;
+            this.pictureBoxVerde.TabStop = false;
+            this.pictureBoxVerde.Click += new System.EventHandler(this.pictureBoxVerde_Click);
+            this.pictureBoxVerde.MouseEnter += new System.EventHandler(this.pictureBoxVerde_MouseEnter);
+            this.pictureBoxVerde.MouseLeave += new System.EventHandler(this.pictureBoxVerde_MouseLeave);
+            // 
+            // PanelRosa
+            // 
+            this.PanelRosa.BackColor = System.Drawing.Color.Transparent;
+            this.PanelRosa.Controls.Add(this.pictureBoxRosa);
+            this.PanelRosa.Location = new System.Drawing.Point(479, 350);
+            this.PanelRosa.Name = "PanelRosa";
+            this.PanelRosa.Size = new System.Drawing.Size(168, 84);
+            this.PanelRosa.TabIndex = 9;
+            // 
+            // pictureBoxRosa
+            // 
+            this.pictureBoxRosa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxRosa.Image = global::MD.Properties.Resources.Rosa;
+            this.pictureBoxRosa.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxRosa.Name = "pictureBoxRosa";
+            this.pictureBoxRosa.Size = new System.Drawing.Size(160, 75);
+            this.pictureBoxRosa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxRosa.TabIndex = 3;
+            this.pictureBoxRosa.TabStop = false;
+            this.pictureBoxRosa.Click += new System.EventHandler(this.pictureBoxRosa_Click);
+            this.pictureBoxRosa.MouseEnter += new System.EventHandler(this.pictureBoxRosa_MouseEnter);
+            this.pictureBoxRosa.MouseLeave += new System.EventHandler(this.pictureBoxRosa_MouseLeave);
+            // 
+            // PanelCeleste
+            // 
+            this.PanelCeleste.BackColor = System.Drawing.Color.Transparent;
+            this.PanelCeleste.Controls.Add(this.pictureBoxCeleste);
+            this.PanelCeleste.Location = new System.Drawing.Point(246, 350);
+            this.PanelCeleste.Name = "PanelCeleste";
+            this.PanelCeleste.Size = new System.Drawing.Size(168, 84);
+            this.PanelCeleste.TabIndex = 8;
+            // 
+            // pictureBoxCeleste
+            // 
+            this.pictureBoxCeleste.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxCeleste.Image = global::MD.Properties.Resources.Celeste;
+            this.pictureBoxCeleste.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxCeleste.Name = "pictureBoxCeleste";
+            this.pictureBoxCeleste.Size = new System.Drawing.Size(160, 75);
+            this.pictureBoxCeleste.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCeleste.TabIndex = 3;
+            this.pictureBoxCeleste.TabStop = false;
+            this.pictureBoxCeleste.Click += new System.EventHandler(this.pictureBoxCeleste_Click);
+            this.pictureBoxCeleste.MouseEnter += new System.EventHandler(this.pictureBoxCeleste_MouseEnter);
+            this.pictureBoxCeleste.MouseLeave += new System.EventHandler(this.pictureBoxCeleste_MouseLeave);
+            // 
             // PanelClaro
             // 
             this.PanelClaro.Controls.Add(this.pictureBoxClaro);
+            this.PanelClaro.Cursor = System.Windows.Forms.Cursors.Default;
             this.PanelClaro.Location = new System.Drawing.Point(706, 217);
             this.PanelClaro.Name = "PanelClaro";
-            this.PanelClaro.Size = new System.Drawing.Size(164, 79);
+            this.PanelClaro.Size = new System.Drawing.Size(168, 84);
             this.PanelClaro.TabIndex = 2;
             // 
             // pictureBoxClaro
             // 
-            this.pictureBoxClaro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxClaro.Image = global::MD.Properties.Resources.Claro;
-            this.pictureBoxClaro.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxClaro.Location = new System.Drawing.Point(4, 4);
             this.pictureBoxClaro.Name = "pictureBoxClaro";
-            this.pictureBoxClaro.Size = new System.Drawing.Size(164, 79);
+            this.pictureBoxClaro.Size = new System.Drawing.Size(160, 75);
             this.pictureBoxClaro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxClaro.TabIndex = 0;
             this.pictureBoxClaro.TabStop = false;
@@ -188,16 +274,15 @@
             this.PanelOscuro.Controls.Add(this.pictureBoxOscuro);
             this.PanelOscuro.Location = new System.Drawing.Point(479, 217);
             this.PanelOscuro.Name = "PanelOscuro";
-            this.PanelOscuro.Size = new System.Drawing.Size(164, 79);
+            this.PanelOscuro.Size = new System.Drawing.Size(168, 84);
             this.PanelOscuro.TabIndex = 7;
             // 
             // pictureBoxOscuro
             // 
-            this.pictureBoxOscuro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxOscuro.Image = global::MD.Properties.Resources.Negro;
-            this.pictureBoxOscuro.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxOscuro.Location = new System.Drawing.Point(4, 4);
             this.pictureBoxOscuro.Name = "pictureBoxOscuro";
-            this.pictureBoxOscuro.Size = new System.Drawing.Size(164, 79);
+            this.pictureBoxOscuro.Size = new System.Drawing.Size(160, 75);
             this.pictureBoxOscuro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxOscuro.TabIndex = 0;
             this.pictureBoxOscuro.TabStop = false;
@@ -210,16 +295,15 @@
             this.PanelRojo.Controls.Add(this.pictureBoxRojo);
             this.PanelRojo.Location = new System.Drawing.Point(246, 217);
             this.PanelRojo.Name = "PanelRojo";
-            this.PanelRojo.Size = new System.Drawing.Size(164, 79);
+            this.PanelRojo.Size = new System.Drawing.Size(168, 84);
             this.PanelRojo.TabIndex = 6;
             // 
             // pictureBoxRojo
             // 
-            this.pictureBoxRojo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxRojo.Image = global::MD.Properties.Resources.Rojo;
-            this.pictureBoxRojo.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxRojo.Location = new System.Drawing.Point(4, 4);
             this.pictureBoxRojo.Name = "pictureBoxRojo";
-            this.pictureBoxRojo.Size = new System.Drawing.Size(164, 79);
+            this.pictureBoxRojo.Size = new System.Drawing.Size(160, 75);
             this.pictureBoxRojo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxRojo.TabIndex = 0;
             this.pictureBoxRojo.TabStop = false;
@@ -232,16 +316,15 @@
             this.PanelMorado.Controls.Add(this.pictureBoxMorado);
             this.PanelMorado.Location = new System.Drawing.Point(706, 86);
             this.PanelMorado.Name = "PanelMorado";
-            this.PanelMorado.Size = new System.Drawing.Size(164, 79);
+            this.PanelMorado.Size = new System.Drawing.Size(168, 84);
             this.PanelMorado.TabIndex = 5;
             // 
             // pictureBoxMorado
             // 
-            this.pictureBoxMorado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxMorado.Image = global::MD.Properties.Resources.Morado;
-            this.pictureBoxMorado.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxMorado.Location = new System.Drawing.Point(4, 4);
             this.pictureBoxMorado.Name = "pictureBoxMorado";
-            this.pictureBoxMorado.Size = new System.Drawing.Size(164, 79);
+            this.pictureBoxMorado.Size = new System.Drawing.Size(160, 75);
             this.pictureBoxMorado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMorado.TabIndex = 0;
             this.pictureBoxMorado.TabStop = false;
@@ -254,16 +337,15 @@
             this.PanelAzul.Controls.Add(this.pictureBoxAzul);
             this.PanelAzul.Location = new System.Drawing.Point(479, 86);
             this.PanelAzul.Name = "PanelAzul";
-            this.PanelAzul.Size = new System.Drawing.Size(164, 79);
+            this.PanelAzul.Size = new System.Drawing.Size(168, 84);
             this.PanelAzul.TabIndex = 4;
             // 
             // pictureBoxAzul
             // 
-            this.pictureBoxAzul.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxAzul.Image = global::MD.Properties.Resources.Azul;
-            this.pictureBoxAzul.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxAzul.Location = new System.Drawing.Point(4, 4);
             this.pictureBoxAzul.Name = "pictureBoxAzul";
-            this.pictureBoxAzul.Size = new System.Drawing.Size(164, 79);
+            this.pictureBoxAzul.Size = new System.Drawing.Size(160, 75);
             this.pictureBoxAzul.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAzul.TabIndex = 3;
             this.pictureBoxAzul.TabStop = false;
@@ -273,26 +355,40 @@
             // 
             // PanelCafe
             // 
+            this.PanelCafe.BackColor = System.Drawing.Color.Transparent;
             this.PanelCafe.Controls.Add(this.pictureBoxCafe);
             this.PanelCafe.Location = new System.Drawing.Point(246, 86);
             this.PanelCafe.Name = "PanelCafe";
-            this.PanelCafe.Size = new System.Drawing.Size(164, 79);
+            this.PanelCafe.Size = new System.Drawing.Size(168, 84);
             this.PanelCafe.TabIndex = 2;
             // 
             // pictureBoxCafe
             // 
             this.pictureBoxCafe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxCafe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxCafe.Image = global::MD.Properties.Resources.Cafe;
-            this.pictureBoxCafe.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxCafe.Location = new System.Drawing.Point(4, 4);
             this.pictureBoxCafe.Name = "pictureBoxCafe";
-            this.pictureBoxCafe.Size = new System.Drawing.Size(164, 79);
+            this.pictureBoxCafe.Size = new System.Drawing.Size(160, 75);
             this.pictureBoxCafe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCafe.TabIndex = 3;
             this.pictureBoxCafe.TabStop = false;
             this.pictureBoxCafe.Click += new System.EventHandler(this.pictureBoxCafe_Click);
             this.pictureBoxCafe.MouseEnter += new System.EventHandler(this.pictureBoxCafe_MouseEnter);
             this.pictureBoxCafe.MouseLeave += new System.EventHandler(this.pictureBoxCafe_MouseLeave);
+            // 
+            // buttonReturn
+            // 
+            this.buttonReturn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonReturn.FlatAppearance.BorderSize = 0;
+            this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReturn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonReturn.Location = new System.Drawing.Point(7, 427);
+            this.buttonReturn.Name = "buttonReturn";
+            this.buttonReturn.Size = new System.Drawing.Size(214, 37);
+            this.buttonReturn.TabIndex = 3;
+            this.buttonReturn.Text = "Regresar";
+            this.buttonReturn.UseVisualStyleBackColor = true;
+            this.buttonReturn.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_principal
             // 
@@ -314,6 +410,12 @@
             this.PanelL.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.PanelP.ResumeLayout(false);
+            this.PanelVerde.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVerde)).EndInit();
+            this.PanelRosa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRosa)).EndInit();
+            this.PanelCeleste.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCeleste)).EndInit();
             this.PanelClaro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClaro)).EndInit();
             this.PanelOscuro.ResumeLayout(false);
@@ -351,5 +453,12 @@
         private PictureBox pictureBoxOscuro;
         private System.Windows.Forms.Panel PanelClaro;
         private PictureBox pictureBoxClaro;
+        private System.Windows.Forms.Panel PanelCeleste;
+        private PictureBox pictureBoxCeleste;
+        private System.Windows.Forms.Panel PanelVerde;
+        private PictureBox pictureBoxVerde;
+        private System.Windows.Forms.Panel PanelRosa;
+        private PictureBox pictureBoxRosa;
+        private Button buttonReturn;
     }
 }
