@@ -1,9 +1,0 @@
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\Funcion\bin\Debug\Funcion.dll
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\Funcion\bin\Debug\Funcion.pdb
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\Funcion\bin\Debug\BASEDATOS.dll
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\Funcion\bin\Debug\BASEDATOS.pdb
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\Funcion\obj\Debug\Funcion.csproj.AssemblyReference.cache
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\Funcion\obj\Debug\Funcion.csproj.CoreCompileInputs.cache
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\Funcion\obj\Debug\Funcion.csproj.CopyComplete
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\Funcion\obj\Debug\Funcion.dll
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\Funcion\obj\Debug\Funcion.pdb
