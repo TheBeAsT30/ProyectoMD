@@ -74,7 +74,6 @@
             this.PanelP.Size = new System.Drawing.Size(416, 393);
             this.PanelP.TabIndex = 2;
             this.PanelP.DoubleClick += new System.EventHandler(this.PanelP_DoubleClick);
-            this.PanelP.MouseLeave += new System.EventHandler(this.PanelP_MouseLeave);
             this.PanelP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelP_MouseMove);
             // 
             // linkLabel1
@@ -121,6 +120,7 @@
             this.PanelS.Name = "PanelS";
             this.PanelS.Size = new System.Drawing.Size(416, 79);
             this.PanelS.TabIndex = 14;
+            this.PanelS.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelS_MouseMove);
             // 
             // PanelB
             // 

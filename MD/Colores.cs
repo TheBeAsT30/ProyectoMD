@@ -90,7 +90,7 @@ namespace MD
         private static readonly Color PanelLBL = Color.FromArgb(219, 221, 212);
         private static readonly Color BotonesBL = Color.FromArgb(248, 248, 248);
         private static readonly Color BackImagenVL = Color.FromArgb(229, 229, 229);
-        private static readonly Color FuenteCA = Color.FromArgb(255, 255, 255);
+        //private static readonly Color FuenteCA = Color.FromArgb(255, 255, 255);
         private static readonly Color FuenteCA2 = Color.FromArgb(0, 0, 0);
 
         #region ->Metodo
@@ -184,9 +184,8 @@ namespace MD
             {
                 PanelPrincipal = PanelPBL;
                 PanelSuperior = PanelSBL;
-                BotonesS = BotonesBL;
-                FuenteC = FuenteCA;
-                FuenteO = FuenteCA2;
+                BotonesS = BotonesBL;             
+                FuenteC = FuenteCA2;
                 PanelLateral = PanelLBL;
                 BackImagen = BackImagenVL;
             }

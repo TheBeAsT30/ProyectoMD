@@ -33,11 +33,12 @@
             this.Contraseña = new System.Windows.Forms.TextBox();
             this.Modificar1 = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonRegresar = new FontAwesome.Sharp.IconButton();
             this.iconPictureBoxNVer2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBoxNVer1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBoxVer2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBoxVer1 = new FontAwesome.Sharp.IconPictureBox();
+            this.PanelS = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxNVer2)).BeginInit();
@@ -52,7 +53,7 @@
             this.ConfirmarPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ConfirmarPass.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ConfirmarPass.ForeColor = System.Drawing.Color.DimGray;
-            this.ConfirmarPass.Location = new System.Drawing.Point(60, 100);
+            this.ConfirmarPass.Location = new System.Drawing.Point(67, 150);
             this.ConfirmarPass.Multiline = true;
             this.ConfirmarPass.Name = "ConfirmarPass";
             this.ConfirmarPass.PasswordChar = '*';
@@ -70,7 +71,7 @@
             this.iconPictureBox2.IconColor = System.Drawing.SystemColors.AppWorkspace;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 29;
-            this.iconPictureBox2.Location = new System.Drawing.Point(34, 62);
+            this.iconPictureBox2.Location = new System.Drawing.Point(41, 112);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(29, 30);
             this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -83,7 +84,7 @@
             this.Contraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Contraseña.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Contraseña.ForeColor = System.Drawing.Color.DimGray;
-            this.Contraseña.Location = new System.Drawing.Point(60, 62);
+            this.Contraseña.Location = new System.Drawing.Point(67, 112);
             this.Contraseña.Multiline = true;
             this.Contraseña.Name = "Contraseña";
             this.Contraseña.PasswordChar = '*';
@@ -104,7 +105,7 @@
             this.Modificar1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Modificar1.IconSize = 25;
             this.Modificar1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Modificar1.Location = new System.Drawing.Point(149, 136);
+            this.Modificar1.Location = new System.Drawing.Point(156, 186);
             this.Modificar1.Name = "Modificar1";
             this.Modificar1.Size = new System.Drawing.Size(106, 35);
             this.Modificar1.TabIndex = 29;
@@ -115,7 +116,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.PanelS);
+            this.panel1.Controls.Add(this.iconButtonRegresar);
             this.panel1.Controls.Add(this.Modificar1);
             this.panel1.Controls.Add(this.iconPictureBoxNVer2);
             this.panel1.Controls.Add(this.iconPictureBoxNVer1);
@@ -127,30 +129,29 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 316);
+            this.panel1.Size = new System.Drawing.Size(416, 393);
             this.panel1.TabIndex = 35;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // iconButton1
+            // iconButtonRegresar
             // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Share;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.Location = new System.Drawing.Point(149, 177);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(106, 35);
-            this.iconButton1.TabIndex = 34;
-            this.iconButton1.Text = "Regresar";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButtonRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonRegresar.FlatAppearance.BorderSize = 0;
+            this.iconButtonRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonRegresar.IconChar = FontAwesome.Sharp.IconChar.Share;
+            this.iconButtonRegresar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonRegresar.IconSize = 25;
+            this.iconButtonRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonRegresar.Location = new System.Drawing.Point(156, 227);
+            this.iconButtonRegresar.Name = "iconButtonRegresar";
+            this.iconButtonRegresar.Size = new System.Drawing.Size(106, 35);
+            this.iconButtonRegresar.TabIndex = 34;
+            this.iconButtonRegresar.Text = "Regresar";
+            this.iconButtonRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonRegresar.UseVisualStyleBackColor = true;
+            this.iconButtonRegresar.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconPictureBoxNVer2
             // 
@@ -161,7 +162,7 @@
             this.iconPictureBoxNVer2.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBoxNVer2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxNVer2.IconSize = 19;
-            this.iconPictureBoxNVer2.Location = new System.Drawing.Point(309, 106);
+            this.iconPictureBoxNVer2.Location = new System.Drawing.Point(316, 156);
             this.iconPictureBoxNVer2.Name = "iconPictureBoxNVer2";
             this.iconPictureBoxNVer2.Size = new System.Drawing.Size(23, 19);
             this.iconPictureBoxNVer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -178,7 +179,7 @@
             this.iconPictureBoxNVer1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBoxNVer1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxNVer1.IconSize = 19;
-            this.iconPictureBoxNVer1.Location = new System.Drawing.Point(309, 68);
+            this.iconPictureBoxNVer1.Location = new System.Drawing.Point(316, 118);
             this.iconPictureBoxNVer1.Name = "iconPictureBoxNVer1";
             this.iconPictureBoxNVer1.Size = new System.Drawing.Size(23, 19);
             this.iconPictureBoxNVer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -195,7 +196,7 @@
             this.iconPictureBoxVer2.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBoxVer2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxVer2.IconSize = 19;
-            this.iconPictureBoxVer2.Location = new System.Drawing.Point(309, 106);
+            this.iconPictureBoxVer2.Location = new System.Drawing.Point(316, 156);
             this.iconPictureBoxVer2.Name = "iconPictureBoxVer2";
             this.iconPictureBoxVer2.Size = new System.Drawing.Size(23, 19);
             this.iconPictureBoxVer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -212,7 +213,7 @@
             this.iconPictureBoxVer1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBoxVer1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxVer1.IconSize = 19;
-            this.iconPictureBoxVer1.Location = new System.Drawing.Point(309, 68);
+            this.iconPictureBoxVer1.Location = new System.Drawing.Point(316, 118);
             this.iconPictureBoxVer1.Name = "iconPictureBoxVer1";
             this.iconPictureBoxVer1.Size = new System.Drawing.Size(23, 19);
             this.iconPictureBoxVer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -220,11 +221,20 @@
             this.iconPictureBoxVer1.TabStop = false;
             this.iconPictureBoxVer1.Click += new System.EventHandler(this.iconPictureBoxVer1_Click);
             // 
+            // PanelS
+            // 
+            this.PanelS.BackColor = System.Drawing.Color.Black;
+            this.PanelS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelS.Location = new System.Drawing.Point(0, 0);
+            this.PanelS.Name = "PanelS";
+            this.PanelS.Size = new System.Drawing.Size(416, 35);
+            this.PanelS.TabIndex = 35;
+            // 
             // Form_NuevoPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 316);
+            this.ClientSize = new System.Drawing.Size(416, 393);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_NuevoPass";
@@ -252,6 +262,7 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxVer1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxNVer2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxNVer1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButtonRegresar;
+        private Panel PanelS;
     }
 }

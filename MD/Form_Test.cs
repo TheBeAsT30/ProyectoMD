@@ -17,23 +17,24 @@ namespace MD
             InitializeComponent();
         }
         string color = Properties.Settings.Default.Tema;
-        private void button1_Click(object sender, EventArgs e)
+        private void Form_Test_Load(object sender, EventArgs e)
         {
-
+            #region->Capitulo 1
+            /*Colores.ElegirColor(color);
+            panelCap1.BackColor = Colores.PanelPrincipal;
+            label1.ForeColor = Colores.FuenteC;
+            listBoxart1.ForeColor = Colores.FuenteC;
+            listBoxart2.ForeColor = Colores.FuenteC;
+            listBoxart3.ForeColor = Colores.FuenteC;
+            listBoxart1.BackColor = Colores.PanelPrincipal;
+            listBoxart2.BackColor = Colores.PanelPrincipal;
+            listBoxart3.BackColor = Colores.PanelPrincipal;*/
+            #endregion
         }
 
-        private void Form_temas_Load(object sender, EventArgs e)
+        private void datosmoto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            #region ->Color        
-            if (Variables.Opcion == "Amarillo")
-            {
-                /*Properties.Settings.Default["Tema"] = "Amarillo";
-                Properties.Settings.Default.Save();
-                color = Properties.Settings.Default.Tema;*/                    
-                Colores.ElegirColor(color);
-                PanelT.BackColor = Colores.PanelTemas;
-            }
-            #endregion
+
         }
     }
 }

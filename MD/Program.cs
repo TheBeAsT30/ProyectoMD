@@ -16,7 +16,9 @@ namespace MD
             Application.Run(new Form_login());
             //Application.Run(new Form_Register());
             //Application.Run(new Form_Recuperar());
-            //Application.Run(new Form_NuevoPass());
+            //Application.Run(new Form_NuevoPass());   
+            //Application.Run(new Form_cap());
+            //Application.Run(new Form_Estudio());
 
 
         }

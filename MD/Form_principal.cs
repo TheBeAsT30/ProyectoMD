@@ -7,42 +7,112 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace MD
 {
-    public partial class Form_principal : Form
+    public partial class Form_principal : Form 
     {
         public Form_principal()
         {
             InitializeComponent();
-        }
-        string color = Properties.Settings.Default.Tema;
-        private void Cerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void Minimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.DoubleBuffered = true;
         }
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            #region ->Color
+            Partes2();
+            panelP2.BringToFront();
+            labelname.Text = Variables.Name;
+            labellastname.Text = Variables.Last_name;
+            labelscore.Text = Convert.ToString(Variables.Process);
+        }
+
+        #region->Color de paneles y Herramientas
+        string color = Properties.Settings.Default.Tema;
+        int posY = 0;
+        int posX = 0;
+        public void Partes2()
+        {         
             Colores.ElegirColor(color);
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
             PanelL.BackColor = Colores.PanelLateral;
+            Tema.BackColor = Colores.BotonesS;
             Tema.ForeColor = Colores.FuenteC;
+            Return.ForeColor = Colores.FuenteC;
+            Return.BackColor = Colores.BotonesS;
+            buttonestudio.BackColor = Colores.BotonesS;
+            buttonestudio.ForeColor = Colores.FuenteC;
+            labellastname.ForeColor = Colores.FuenteC;
+            labelname.ForeColor = Colores.FuenteC;
+            labelscore.ForeColor = Colores.FuenteC;
+            Minimizar.IconColor = Colores.FuenteC;
+            Minimizar.BackColor = Colores.PanelSuperior;
+            Cerrar.IconColor = Colores.FuenteC;
+            Cerrar.BackColor = Colores.PanelSuperior;
+            comboBox1.BackColor = Colores.PanelLateral;
+            comboBox1.ForeColor = Colores.FuenteC;
+            button1Examen.BackColor = Colores.BotonesS;
+            button1Examen.ForeColor = Colores.FuenteC;
+            buttonRefresh.BackColor = Colores.BotonesS;
+            buttonRefresh.ForeColor = Colores.FuenteC;         
+        }
+
+        public void Partes()
+        {
+            Properties.Settings.Default.Save();
+            color = Properties.Settings.Default.Tema;
+            Colores.ElegirColor(color);
+            PanelP.BackColor = Colores.PanelPrincipal;
+            PanelS.BackColor = Colores.PanelSuperior;
+            PanelL.BackColor = Colores.PanelLateral;
+            Tema.BackColor = Colores.BotonesS;
+            Tema.ForeColor = Colores.FuenteC;
+            Return.ForeColor = Colores.FuenteC;
+            Return.BackColor = Colores.BotonesS;
+            buttonestudio.BackColor = Colores.BotonesS;
+            buttonestudio.ForeColor = Colores.FuenteC;
+            labellastname.ForeColor = Colores.FuenteC;
+            labelname.ForeColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.BackImagen;
             Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;                    
-            #endregion
+            comboBox1.BackColor = Colores.PanelLateral;
+            comboBox1.ForeColor = Colores.FuenteC;        
         }
-        int posY = 0;
-        int posX = 0;
+        #endregion
 
+        #region->Funciones para esconder o mostrar panel de Colores
+        public void PanelColoresAtras()
+        {
+            PanelAzul.Visible = false;
+            PanelCafe.Visible = false;
+            PanelCeleste.Visible = false;
+            PanelClaro.Visible = false;
+            PanelMorado.Visible = false;
+            PanelOscuro.Visible = false;
+            PanelRosa.Visible = false;
+            PanelRojo.Visible = false;
+            PanelVerde.Visible = false;
+        }
+
+        public void PanelColoresAdelante()
+        {
+            PanelAzul.Visible = true;
+            PanelCafe.Visible = true;
+            PanelCeleste.Visible = true;
+            PanelClaro.Visible = true;
+            PanelMorado.Visible = true;
+            PanelOscuro.Visible = true;
+            PanelRosa.Visible = true;
+            PanelRojo.Visible = true;
+            PanelVerde.Visible = true;
+        }
+        #endregion
+
+        #region->Funciones para mover el panel
         private void PanelS_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left)
@@ -84,7 +154,9 @@ namespace MD
                 Top = Top + (e.Y - posY);
             }
         }
+        #endregion
 
+        #region->Funciones para abrir o cerrar Formularios
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Variables.Opcion == "Coffe")
@@ -96,8 +168,8 @@ namespace MD
             {
                 Properties.Settings.Default["Tema"] = "Azul";
                 Properties.Settings.Default.Save();
-            }            
-            else if(Variables.Opcion == "Red")
+            }
+            else if (Variables.Opcion == "Red")
             {
                 Properties.Settings.Default["Tema"] = "Rojo";
                 Properties.Settings.Default.Save();
@@ -134,36 +206,25 @@ namespace MD
             }
         }
 
-
-        private void Tema_Click(object sender, EventArgs e)
+        public void Cerrarformulario()
         {
-            Variables.Opcion = "light_blue";
-            Properties.Settings.Default["Tema"] = "Celeste";
-            Properties.Settings.Default.Save();
-            color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
-            Tema.Visible = false;
-            pictureBoxAzul.Visible = false;
-            pictureBoxCafe.Visible = false;
-            pictureBoxClaro.Visible = false;
-            pictureBoxMorado.Visible = false;
-            pictureBoxOscuro.Visible = false;
-            pictureBoxRojo.Visible = false;
-            iconPictureBox1.Visible = false;
+            labelscore.Text = Convert.ToString(Variables.Process);
+            try
+            {
+                Form formulario;
+                formulario = panelP2.Controls.OfType<Form>().FirstOrDefault();
+                if (formulario != null)
+                {
+                    formulario.Close();
+                }
+            }
+            catch(Exception ex) {;}
         }
-        #region
+
         private void Abrirformulario<MiForm>(string v) where MiForm : Form, new()
         {
             Form formulario;
-            formulario = PanelP.Controls.OfType<MiForm>().FirstOrDefault(); //Busca en la colección el formulario
-            //Si el formulario/instancia no existe
+            formulario = PanelP.Controls.OfType<MiForm>().FirstOrDefault();
             if (formulario == null)
             {
                 formulario = new MiForm();
@@ -172,35 +233,24 @@ namespace MD
                 formulario.Dock = DockStyle.Fill;
                 //formulario.FormBorderStyle = FormBorderStyle.None;
                 //formulario.Dock = DockStyle.Fill;
-                PanelP.Controls.Add(formulario);
-                PanelP.Tag = formulario;
+                //panelP2.BringToFront();
+                panelP2.Controls.Add(formulario);
+                panelP2.Tag = formulario;
                 formulario.Show();
-                formulario.BringToFront();                
-                //formulario.FormClosed += new FormClosedEventHandler(CloseForms);
-            }
-            //Si el formulario existe
-            else
-            {
                 formulario.BringToFront();
-            }
+            }       
+            else { formulario.BringToFront(); }
         }
         #endregion
 
-        #region ->Cambiar Colores
+        #region ->Funciones para cambiar Colores. Y efectos de Panel de Colores
         private void pictureBoxCafe_Click(object sender, EventArgs e)
         {
             Variables.Opcion = "Coffe";
             Properties.Settings.Default["Tema"] = "Cafe";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
+            Partes2();
         }
         private void pictureBoxAzul_Click(object sender, EventArgs e)
         {
@@ -208,14 +258,8 @@ namespace MD
             Properties.Settings.Default["Tema"] = "Azul";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
+            Partes2();
+
         }
 
         private void pictureBoxMorado_Click(object sender, EventArgs e)
@@ -224,14 +268,8 @@ namespace MD
             Properties.Settings.Default["Tema"] = "Morado";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
+            Partes2();
+
         }
 
         private void pictureBoxRojo_Click(object sender, EventArgs e)
@@ -240,14 +278,8 @@ namespace MD
             Properties.Settings.Default["Tema"] = "Rojo";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
+            Partes2();
+
         }
 
         private void pictureBoxOscuro_Click(object sender, EventArgs e)
@@ -256,14 +288,8 @@ namespace MD
             Properties.Settings.Default["Tema"] = "Oscuro";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
+            Partes2();
+
         }
 
         private void pictureBoxClaro_Click(object sender, EventArgs e)
@@ -272,14 +298,8 @@ namespace MD
             Properties.Settings.Default["Tema"] = "Claro";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
+            Partes2();
+
         }
 
         private void pictureBoxCeleste_Click(object sender, EventArgs e)
@@ -288,14 +308,8 @@ namespace MD
             Properties.Settings.Default["Tema"] = "Celeste";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
+            Partes2();
+
         }
 
         private void pictureBoxRosa_Click(object sender, EventArgs e)
@@ -304,14 +318,8 @@ namespace MD
             Properties.Settings.Default["Tema"] = "Rosa";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
+            Partes2();
+
         }
         private void pictureBoxVerde_Click(object sender, EventArgs e)
         {
@@ -319,14 +327,8 @@ namespace MD
             Properties.Settings.Default["Tema"] = "Verde";
             Properties.Settings.Default.Save();
             color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.FuenteC;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            Tema.BackColor = Colores.BotonesS;
+            Partes2();
+
         }
         private void pictureBoxCafe_MouseEnter(object sender, EventArgs e)
         {
@@ -493,38 +495,162 @@ namespace MD
 
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        #region->Funciones de los botones, combox e icconbuttons
+        private void Tema_Click(object sender, EventArgs e)
+        {
+            Cerrarformulario();
+            comboBox1.Visible = false;
+            if (Variables.Panel == "Cap1" || Variables.Panel == "Estudio")
+            {
+                PanelColoresAdelante();
+                panelP2.SendToBack();
+            }
+            else
+            {
+                PanelColoresAdelante();
+                panelP2.SendToBack();
+                #region -> Colores 
+                Colores.ElegirColor(color);
+                if (Variables.Opcion == "Amarillo") Partes();
+                if (Variables.Opcion == "Coffe") Partes();
+                else if (Variables.Opcion == "Blue") Partes();
+                else if (Variables.Opcion == "Red") Partes();
+                else if (Variables.Opcion == "Purple") Partes();
+                else if (Variables.Opcion == "Dark") Partes();
+                else if (Variables.Opcion == "White") Partes();
+                else if (Variables.Opcion == "light_blue") Partes();
+                else if (Variables.Opcion == "Pink") Partes();
+                else if (Variables.Opcion == "Green") Partes();
+                #endregion
+            }
+        }
+
+        private void buttonestudio_Click(object sender, EventArgs e)
+        {
+            comboBox1.Visible = true;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Capítulo 1")
+            {
+                comboBox1.Text = null;
+                comboBox1.Visible = false;
+                Variables.Config = "Cap1";            
+                PanelColoresAtras();
+                Cerrarformulario();
+                Abrirformulario<Form_Capitulos>(Variables.Opcion);
+            }
+            else if (comboBox1.Text == "Capítulo 2" || comboBox1.Text == "Capítulo 3")
+            {
+                comboBox1.Text = null;
+                comboBox1.Visible = false;
+                Variables.Config = "Cap2";
+                PanelColoresAtras();
+                Cerrarformulario();
+                Abrirformulario<Form_Capitulos>(Variables.Opcion);
+            }
+            else if (comboBox1.Text == "Capítulo 4" || comboBox1.Text == "Capítulo 5")
+            {
+                comboBox1.Text = null;
+                comboBox1.Visible = false;
+                Variables.Config = "Cap4";
+                PanelColoresAtras();
+                Cerrarformulario();
+                Abrirformulario<Form_Capitulos>(Variables.Opcion);
+            }
+            else if (comboBox1.Text == "Capítulo 6")
+            {
+                comboBox1.Text = null;
+                comboBox1.Visible = false;
+                Variables.Config = "Cap6";
+                PanelColoresAtras();
+                Cerrarformulario();
+                Abrirformulario<Form_Capitulos>(Variables.Opcion);
+            }
+            else if(comboBox1.Text == "Capítulo 7")
+            {
+                comboBox1.Text = null;
+                comboBox1.Visible = false;
+                Variables.Config = "Cap7";
+                PanelColoresAtras();
+                Cerrarformulario();
+                Abrirformulario<Form_Capitulos>(Variables.Opcion);
+            }
+            else if (comboBox1.Text == "Capítulo 8")
+            {
+                comboBox1.Text = null;
+                comboBox1.Visible = false;
+                Variables.Config = "Cap8";
+                PanelColoresAtras();
+                Cerrarformulario();
+                Abrirformulario<Form_Capitulos>(Variables.Opcion);
+            }
+            else if (comboBox1.Text == "Capítulo 9")
+            {
+                comboBox1.Text = null;
+                comboBox1.Visible = false;
+                Variables.Config = "Cap9";
+                PanelColoresAtras();
+                Cerrarformulario();
+                Abrirformulario<Form_Capitulos>(Variables.Opcion);
+            }
+            else if (comboBox1.Text == "Capítulo 10")
+            {
+                comboBox1.Text = null;
+                comboBox1.Visible = false;
+                Variables.Config = "Cap10";
+                PanelColoresAtras();
+                Cerrarformulario();
+                Abrirformulario<Form_Capitulos>(Variables.Opcion);
+            }
+            else if (comboBox1.Text == "Capítulo 11" || comboBox1.Text == "Capítulo 12")
+            {
+                comboBox1.Text = null;
+                comboBox1.Visible = false;
+                Variables.Config = "Cap11";
+                PanelColoresAtras();
+                Cerrarformulario();
+                Abrirformulario<Form_Capitulos>(Variables.Opcion);
+            }
+
+        }
+
+        private void Return_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Estas seguros de cerrar el formulario?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                this.Close(); Form_login login = new Form_login(); login.Show();
+            {
+                Form_login login = new Form_login();
+                login.Show();
+                this.Hide();
+            }
+            else;
         }
+
+        private void button1Examen_Click(object sender, EventArgs e)
+        {
+            comboBox1.Visible = false;
+            PanelColoresAtras();
+            Abrirformulario<Form_Estudio>(Variables.Opcion);
+        }
+
+        private void iconPictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconPictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            panelP2.BringToFront();
+            PanelColoresAtras();
+            Cerrarformulario();
+            labelscore.Text = Convert.ToString(Variables.Process);
+        }
+        #endregion
     }
 }
-
-/*            #region -> Color
-            Properties.Settings.Default["Tema"] = ComboTema.Text;
-            Properties.Settings.Default.Save();
-            color = Properties.Settings.Default.Tema;
-            Colores.ElegirColor(color);
-            PanelP.BackColor = Colores.PanelPrincipal;
-            PanelS.BackColor = Colores.PanelSuperior;        
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.ForeColor = Colores.Fuente;
-            Tema.BackColor = Colores.BotonesS;
-            Minimizar.BackColor = Colores.BackImagen;
-            Cerrar.BackColor = Colores.BackImagen;
-            if (ComboTema.Text == "Amarillo")
-            {
-                //panelP2.SendToBack();
-                //panelP2.BringToFront();
-                iconPictureBox1.SendToBack();
-                PanelP.BringToFront();
-                PanelL.BringToFront();
-                PanelS.BringToFront();
-                ComboTema.SendToBack();
-                //buttonBlue.BringToFront();
-                //buttonYellow.BringToFront();
-            }
-            //Abrirformulario<Form_Test>(Variables.Opcion="Amarillo");
-
-            #endregion*/

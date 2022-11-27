@@ -16,6 +16,9 @@ namespace MD
     {
         const string USER = "soportelibreriapnt@gmail.com";
         const string PASSWORD = "kgojkwerbvjrcgxo";
+        ValidarText text = new ValidarText();
+        int c = 0;
+
         public Form_Recuperar()
         {
             InitializeComponent();
@@ -42,6 +45,7 @@ namespace MD
             iconPictureBox2.IconColor = Colores.FuenteC;
         }
 
+        #region->Funciones para Enviar Correo, Generar Código y Checkear email
         public static void EnviarCorreo(StringBuilder message, DateTime dateTime, string of, string by, string affair, out string Error)
         {
             Error = "";
@@ -88,22 +92,14 @@ namespace MD
             sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
             if (Regex.IsMatch(seMailAComprobar, sFormato))
             {
-                if (Regex.Replace(seMailAComprobar, sFormato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                if (Regex.Replace(seMailAComprobar, sFormato, String.Empty).Length == 0) { return true; }
+                else { return false; }
             }
-            else
-            {
-                return false;
-            }
+            else { return false; }
         }
+        #endregion
 
-        int c = 0;
+        #region->Funciones de Botones. !Boton Enviar¡
         private void Enviar_Click(object sender, EventArgs e)
         {
             if (checkEmail(textmessage.Text) == false) MessageBox.Show("El correo " + Variables.Email + "es inválido!", "Error:", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -125,12 +121,34 @@ namespace MD
             }                
         }
 
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {          
+            if (textCode.Text == Convert.ToString(c))            
+            {                
+                Form_NuevoPass nuevoPass = new Form_NuevoPass();
+                nuevoPass.Show();
+                Form_login login = new Form_login();
+                login.Close();
+                this.Hide();
+            }
+            else respuesta.Text = "Código incorrecto\nIntente de nuevo";
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            textmessage.Text = "CORREO";
+            textmessage.ForeColor = Color.DimGray;
+            textCode.Text = "CODIGO";
+            textCode.ForeColor = Color.DimGray;
+        }
+        #endregion
+
+        #region->Funciones de los textboxs
         private void textCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;            
             if (textCode.TextLength > 3) e.Handled = true;
-            if (e.KeyChar == (char)Keys.Back) e.Handled = false;
-
+            text.ValidarPass(e);
         }
 
         private void textCode_Enter(object sender, EventArgs e)
@@ -150,21 +168,9 @@ namespace MD
                 textCode.ForeColor = Color.DimGray;
             }
         }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {          
-            if (textCode.Text == Convert.ToString(c))
-            {
-                Form_NuevoPass nuevoPass = new Form_NuevoPass();
-                nuevoPass.ShowDialog();
-                this.Hide();
-            }
-            else respuesta.Text = "Código incorrecto\nIntente de nuevo";
-        }
-
         private void textmessage_Enter(object sender, EventArgs e)
         {
-            if(textmessage.Text == "CORREO")
+            if (textmessage.Text == "CORREO")
             {
                 textmessage.Text = "";
                 textmessage.ForeColor = Colores.FuenteC;
@@ -179,13 +185,7 @@ namespace MD
                 textmessage.ForeColor = Color.DimGray;
             }
         }
+        #endregion
 
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            textmessage.Text = "CORREO";
-            textmessage.ForeColor = Color.DimGray;
-            textCode.Text = "CODIGO";
-            textCode.ForeColor = Color.DimGray;
-        }
     }
 }

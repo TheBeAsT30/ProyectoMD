@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
 namespace MD
 {
     public partial class Form_NuevoPass : Form
@@ -25,12 +26,15 @@ namespace MD
             ConfirmarPass.PasswordChar = '\0';
             Colores.ElegirColor(color);
             Modificar1.BackColor = Colores.PanelLateral;
-            iconButton1.BackColor = Colores.PanelLateral;
+            iconButtonRegresar.BackColor = Colores.PanelLateral;
             panel1.BackColor = Colores.PanelPrincipal;
             Modificar1.ForeColor = Colores.FuenteC;
             Modificar1.IconColor = Colores.FuenteC;                             
             Contraseña.BackColor = Colores.PanelLateral;
             ConfirmarPass.BackColor = Colores.PanelLateral;
+            iconButtonRegresar.BackColor = Colores.PanelLateral;
+            iconButtonRegresar.ForeColor = Colores.FuenteC;
+            iconButtonRegresar.IconColor = Colores.FuenteC;
             iconPictureBox2.BackColor = Colores.PanelLateral;
             iconPictureBox2.IconColor = Colores.FuenteC;
             iconPictureBoxVer1.BackColor = Colores.PanelLateral;
@@ -99,12 +103,12 @@ namespace MD
                 try
                 {
                     string cadena = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
-                    using (SqlConnection connection = new SqlConnection(cadena))
+                    using (MySqlConnection connection = new MySqlConnection(cadena))
                     {
                         connection.Open();
                         /*    UPDATE users SET Password = '4321' WHERE Email = 'guevaravic25@gmail.com';*/
-                        string consulta = "UPDATE users SET Password = '" + ConfirmarPass.Text + "' WHERE Email =  '" + Variables.Email + "';";
-                        using (SqlCommand command = new SqlCommand(consulta, connection))
+                        string consulta = "UPDATE users SET Password= AES_ENCRYPT('" + ConfirmarPass.Text + "','" + Variables.Code + "') WHERE Email =  '" + Variables.Email + "';";
+                        using (MySqlCommand command = new MySqlCommand(consulta, connection))
                         {
                             command.ExecuteNonQuery();
                             connection.Close();
@@ -169,24 +173,7 @@ namespace MD
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            Form_login login = new Form_login();
-            login.Show();
-            this.Close();
-        }
-        int posY = 0;
-        int posX = 0;
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button != MouseButtons.Left)
-            {
-                posX = e.X;
-                posY = e.Y;
-            }
-            else
-            {
-                Left = Left + (e.X - posX);
-                Top = Top + (e.Y - posY);
-            }
+            this.Hide();
         }
     }
 }

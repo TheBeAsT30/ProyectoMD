@@ -1,5 +1,6 @@
+using MySql.Data.MySqlClient;
 using System.Configuration;
-using System.Data.SqlClient;
+
 namespace MD
 {
     public partial class Form_login : Form
@@ -11,10 +12,6 @@ namespace MD
         }
         string color = Properties.Settings.Default.Tema;
 
-        private void PanelP_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
         int posY = 0;
         int posX = 0;
         private void PanelP_MouseMove(object sender, MouseEventArgs e)
@@ -30,6 +27,37 @@ namespace MD
                 Top = Top + (e.Y - posY);
             }
         }
+
+        public void Datos()
+        {
+            try
+            {
+                string cadena = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
+                MySqlConnection connection = new MySqlConnection(cadena);
+                connection.Open();     
+                
+                MySqlCommand command = connection.CreateCommand();
+                command.CommandText = "SELECT Name, Last_name, Score FROM users WHERE NUser= @user";
+                command.CommandType = System.Data.CommandType.Text;                                
+                command.Parameters.Add(new MySqlParameter("@user", Usuario.Text));
+                
+                MySqlDataReader dataReader = command.ExecuteReader();
+                    
+                while(dataReader.Read())
+                {                                
+                    Variables.Name = (string)dataReader["Name"];                
+                    Variables.Last_name = (string)dataReader["Last_name"];
+                    Variables.Process = (int)dataReader["Score"];
+                }
+                dataReader.Close();
+                command.Dispose();
+                connection.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }            
+        }
         public void Login()
         {
             Variables.NUser = Usuario.Text;
@@ -38,21 +66,21 @@ namespace MD
             try
             {
                 string cadena = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
-                using (SqlConnection connection = new SqlConnection(cadena))
+                using (MySqlConnection connection = new MySqlConnection(cadena))
                 {
                     connection.Open();
-                    string consulta = "SELECT NUser, Password FROM users WHERE Nuser='" + Variables.NUser + "'COLLATE SQL_Latin1_General_CP1_CS_AS AND Password='" + Variables.Password + "'OR Email='" + Variables.Email + "'COLLATE SQL_Latin1_General_CP1_CS_AS AND Password='" + Variables.Password + "'";
-                    using (SqlCommand command = new SqlCommand(consulta, connection))
+                    string consulta = "SELECT NUser, AES_DECRYPT(Password, '" + Variables.Code + "') FROM users WHERE BINARY NUser='" + Variables.NUser + "' AND AES_DECRYPT(Password, '" + Variables.Code + "')='" + Variables.Password + "'OR BINARY Email='" + Variables.Email + "'AND AES_DECRYPT(Password, '" + Variables.Code + "')='" + Variables.Password + "'";
+
+                    using (MySqlCommand command = new MySqlCommand(consulta, connection))
                     {
-                        SqlDataReader dataReader;
+                        MySqlDataReader dataReader;
                         dataReader = command.ExecuteReader();
                         if (dataReader.Read())
                         {
+
                             Form_principal frm = new Form_principal();
                             frm.Show();
-                            //frm.FormClosed += CerrarCesion;
-                            this.Hide();
-                            
+                            this.Hide();                                                        
                         }
                         else
                         {
@@ -66,6 +94,7 @@ namespace MD
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                Console.Write(ex);
             }
         }
         private void MensajeError(string mensaje)
@@ -215,6 +244,7 @@ namespace MD
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
+            Datos();
             Login();
         }
 
@@ -257,5 +287,20 @@ namespace MD
             iconPictureBox4.Visible = false;
             Contraseña.PasswordChar = '\0';
         }
+
+        private void PanelS_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
+    
     }
 }

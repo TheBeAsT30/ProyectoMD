@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Text.RegularExpressions;
+using MySql.Data.MySqlClient;
 
 namespace MD
 {
@@ -98,10 +98,8 @@ namespace MD
             else return false;
         }
 
-
-
         public void Register()
-        {
+        {                   
             Variables.Name = textname.Text;
             Variables.Last_name = textlastname.Text;
             Variables.NUser = textuser.Text;
@@ -115,18 +113,20 @@ namespace MD
                     try
                     {
                         string cadena = ConfigurationManager.ConnectionStrings["cadena_conexion"].ConnectionString;
-                        using (SqlConnection connection = new SqlConnection(cadena))
+                        using (MySqlConnection connection = new MySqlConnection(cadena))
                         {
                             connection.Open();
-                            string consulta = "IF NOT EXISTS(SELECT NUser FROM users WHERE NUser= '" + Variables.NUser + "') " + "INSERT INTO users VALUES('" + Variables.Name + "','" + Variables.Last_name + "','" + Variables.NUser + "','" + Variables.Email + "','" + Variables.Password + "')";
-                            using (SqlCommand command = new SqlCommand(consulta, connection))
+                            string consulta = "INSERT IGNORE INTO users (Name, Last_name, NUser, Email, Password, Score) VALUES('" + Variables.Name + "','" + Variables.Last_name + "','" + Variables.NUser + "','" + Variables.Email + "', AES_ENCRYPT('" + Variables.Password + "','" + Variables.Code + "'),'" + 0 + "')";
+                            using (MySqlCommand command = new MySqlCommand(consulta, connection))
                             {
-                                command.ExecuteNonQuery();
-                                if (command.ExecuteNonQuery() != 1) MessageBox.Show("El Usuario " + Variables.NUser + " ya existe!", "Error:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                if (command.ExecuteNonQuery() == 0)
+                                {
+                                    MessageBox.Show("El Usuario " + Variables.NUser + " ya existe!", "Error:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                                 else
                                 {
-                                    connection.Close();
                                     MessageBox.Show("Registro creado");
+                                    connection.Close();
                                 }
                             }
                         }
