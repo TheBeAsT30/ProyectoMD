@@ -1,6 +1,0 @@
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\BASEDATOS\bin\Debug\BASEDATOS.dll
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\BASEDATOS\bin\Debug\BASEDATOS.pdb
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\BASEDATOS\obj\Debug\BASEDATOS.csproj.AssemblyReference.cache
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\BASEDATOS\obj\Debug\BASEDATOS.csproj.CoreCompileInputs.cache
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\BASEDATOS\obj\Debug\BASEDATOS.dll
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\BASEDATOS\obj\Debug\BASEDATOS.pdb

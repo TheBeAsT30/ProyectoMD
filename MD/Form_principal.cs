@@ -22,12 +22,16 @@ namespace MD
         }
 
         private void Principal_Load(object sender, EventArgs e)
-        {
+        {          
             Partes2();
+            PanelEstudiarEsconder();
+            PanelExamenEsconder();
             panelP2.BringToFront();
+            iconButtonCerrar.Visible = false;
             labelname.Text = Variables.Name;
             labellastname.Text = Variables.Last_name;
-            labelscore.Text = Convert.ToString(Variables.Process);
+            labelscorecap.Text = Convert.ToString(Variables.Process);
+            labelscoreexa.Text = Convert.ToString(Variables.Process);            
         }
 
         #region->Color de paneles y Herramientas
@@ -39,26 +43,43 @@ namespace MD
             Colores.ElegirColor(color);
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
-            PanelL.BackColor = Colores.PanelLateral;
-            Tema.BackColor = Colores.BotonesS;
-            Tema.ForeColor = Colores.FuenteC;
-            Return.ForeColor = Colores.FuenteC;
-            Return.BackColor = Colores.BotonesS;
-            buttonestudio.BackColor = Colores.BotonesS;
-            buttonestudio.ForeColor = Colores.FuenteC;
+            PanelL.BackColor = Colores.PanelLateral;         
+            iconButtonTemas.BackColor = Colores.BotonesS;
+            iconButtonTemas.ForeColor = Colores.FuenteC;
+            iconButtonTemas.IconColor = Colores.FuenteC;
+            iconButtonRegresar.ForeColor = Colores.FuenteC;
+            iconButtonRegresar.IconColor = Colores.FuenteC;
+            iconButtonRegresar.BackColor = Colores.BotonesS;
+            iconButtonEstudiar.BackColor = Colores.BotonesS;
+            iconButtonEstudiar.ForeColor = Colores.FuenteC;
+            iconButtonEstudiar.IconColor = Colores.FuenteC;
             labellastname.ForeColor = Colores.FuenteC;
             labelname.ForeColor = Colores.FuenteC;
-            labelscore.ForeColor = Colores.FuenteC;
+            labelscorecap.ForeColor = Colores.FuenteC;
             Minimizar.IconColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.PanelSuperior;
             Cerrar.IconColor = Colores.FuenteC;
             Cerrar.BackColor = Colores.PanelSuperior;
             comboBox1.BackColor = Colores.PanelLateral;
             comboBox1.ForeColor = Colores.FuenteC;
-            button1Examen.BackColor = Colores.BotonesS;
-            button1Examen.ForeColor = Colores.FuenteC;
-            buttonRefresh.BackColor = Colores.BotonesS;
-            buttonRefresh.ForeColor = Colores.FuenteC;         
+            iconButtonExa.BackColor = Colores.BotonesS;
+            iconButtonExa.ForeColor = Colores.FuenteC;
+            iconButtonExa.IconColor = Colores.FuenteC;
+            iconButtonCerrar.BackColor = Colores.BotonesS;
+            iconButtonCerrar.ForeColor = Colores.FuenteC;
+            iconButtonCerrar.IconColor = Colores.FuenteC;
+            iconButtonCap.BackColor = Colores.PanelSuperior;
+            iconButtonCap.ForeColor = Colores.FuenteC;
+            iconButtonCap.IconColor = Colores.FuenteC;
+            iconButtonSena.BackColor = Colores.PanelSuperior;
+            iconButtonSena.ForeColor = Colores.FuenteC;            
+            iconButtonSena.IconColor = Colores.FuenteC;
+            iconButtonExaley.BackColor = Colores.PanelSuperior;
+            iconButtonExaley.ForeColor = Colores.FuenteC;
+            iconButtonExaley.IconColor = Colores.FuenteC;
+            iconButtonExasena.BackColor = Colores.PanelSuperior;
+            iconButtonExasena.ForeColor = Colores.FuenteC;
+            iconButtonExasena.IconColor = Colores.FuenteC;
         }
 
         public void Partes()
@@ -69,12 +90,15 @@ namespace MD
             PanelP.BackColor = Colores.PanelPrincipal;
             PanelS.BackColor = Colores.PanelSuperior;
             PanelL.BackColor = Colores.PanelLateral;
-            Tema.BackColor = Colores.BotonesS;
-            Tema.ForeColor = Colores.FuenteC;
-            Return.ForeColor = Colores.FuenteC;
-            Return.BackColor = Colores.BotonesS;
-            buttonestudio.BackColor = Colores.BotonesS;
-            buttonestudio.ForeColor = Colores.FuenteC;
+            iconButtonTemas.BackColor = Colores.BotonesS;
+            iconButtonTemas.ForeColor = Colores.FuenteC;
+            iconButtonTemas.IconColor = Colores.FuenteC;
+            iconButtonRegresar.ForeColor = Colores.FuenteC;
+            iconButtonRegresar.IconColor = Colores.FuenteC;
+            iconButtonRegresar.BackColor = Colores.BotonesS;
+            iconButtonEstudiar.BackColor = Colores.BotonesS;
+            iconButtonEstudiar.ForeColor = Colores.FuenteC;
+            iconButtonEstudiar.IconColor = Colores.FuenteC;
             labellastname.ForeColor = Colores.FuenteC;
             labelname.ForeColor = Colores.FuenteC;
             Minimizar.BackColor = Colores.BackImagen;
@@ -84,7 +108,7 @@ namespace MD
         }
         #endregion
 
-        #region->Funciones para esconder o mostrar panel de Colores
+        #region->Funciones para esconder o mostrar panel de Colores y Otros
         public void PanelColoresAtras()
         {
             PanelAzul.Visible = false;
@@ -109,6 +133,37 @@ namespace MD
             PanelRosa.Visible = true;
             PanelRojo.Visible = true;
             PanelVerde.Visible = true;
+        }
+
+        public void PanelEstudiarEsconder()
+        {
+            iconButtonCap.Visible = false;
+            iconButtonSena.Visible = false;
+            panelCapi.Visible = false;
+            panelEstudio.Visible = false;
+        }
+
+        public void PanelEstudiarMostrar()
+        {
+            iconButtonCap.Visible = true;
+            iconButtonSena.Visible = true;
+            panelCapi.Visible = true;
+            panelEstudio.Visible = true;
+        }
+
+        public void PanelExamenEsconder()
+        {
+            iconButtonExaley.Visible = false;
+            iconButtonExasena.Visible = false;
+            panelexaley.Visible = false;
+            panelexasena.Visible = false;
+        }
+        public void PanelExamenMostrar()
+        {
+            iconButtonExaley.Visible = true;
+            iconButtonExasena.Visible = true;
+            panelexaley.Visible = true;
+            panelexasena.Visible = true;
         }
         #endregion
 
@@ -208,7 +263,7 @@ namespace MD
 
         public void Cerrarformulario()
         {
-            labelscore.Text = Convert.ToString(Variables.Process);
+            labelscorecap.Text = Convert.ToString(Variables.Process);
             try
             {
                 Form formulario;
@@ -218,7 +273,7 @@ namespace MD
                     formulario.Close();
                 }
             }
-            catch(Exception ex) {;}
+            catch(Exception ex) {MessageBox.Show(Convert.ToString(ex));}
         }
 
         private void Abrirformulario<MiForm>(string v) where MiForm : Form, new()
@@ -493,20 +548,32 @@ namespace MD
             PanelVerde.BackColor = Color.Transparent;
         }
 
+
         #endregion
 
         #region->Funciones de los botones, combox e icconbuttons
-        private void Tema_Click(object sender, EventArgs e)
+        private void iconButtonTemas_Click(object sender, EventArgs e)
         {
             Cerrarformulario();
+            PanelEstudiarEsconder();
+            PanelExamenEsconder();
             comboBox1.Visible = false;
-            if (Variables.Panel == "Cap1" || Variables.Panel == "Estudio")
+            iconButtonCerrar.Visible = true;
+            if (Variables.Panel == "Cap1")
             {
+                Cerrarformulario();
+                PanelColoresAdelante();
+                panelP2.SendToBack();
+            }
+            if (Variables.Panel == "ExaCap")
+            {
+                Cerrarformulario();
                 PanelColoresAdelante();
                 panelP2.SendToBack();
             }
             else
             {
+                Cerrarformulario();
                 PanelColoresAdelante();
                 panelP2.SendToBack();
                 #region -> Colores 
@@ -525,9 +592,35 @@ namespace MD
             }
         }
 
-        private void buttonestudio_Click(object sender, EventArgs e)
+        private void iconPictureBox2_Click(object sender, EventArgs e)
         {
-            comboBox1.Visible = true;
+            Application.Exit();
+        }
+
+        private void iconPictureBox3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            panelP2.BringToFront();
+            PanelEstudiarEsconder();
+            PanelExamenEsconder();
+            PanelColoresAtras();
+            Cerrarformulario();
+            labelscorecap.Text = Convert.ToString(Variables.Process);
+        }
+
+        private void iconButtonRegresar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estas seguros de cerrar el formulario?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                Form_login login = new Form_login();
+                login.Show();
+                this.Hide();
+            }
+            else;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -536,7 +629,7 @@ namespace MD
             {
                 comboBox1.Text = null;
                 comboBox1.Visible = false;
-                Variables.Config = "Cap1";            
+                Variables.Config = "Cap1";
                 PanelColoresAtras();
                 Cerrarformulario();
                 Abrirformulario<Form_Capitulos>(Variables.Opcion);
@@ -568,7 +661,7 @@ namespace MD
                 Cerrarformulario();
                 Abrirformulario<Form_Capitulos>(Variables.Opcion);
             }
-            else if(comboBox1.Text == "Capítulo 7")
+            else if (comboBox1.Text == "Capítulo 7")
             {
                 comboBox1.Text = null;
                 comboBox1.Visible = false;
@@ -616,41 +709,322 @@ namespace MD
 
         }
 
-        private void Return_Click(object sender, EventArgs e)
+        private void iconButtonEstudiar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Estas seguros de cerrar el formulario?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                Form_login login = new Form_login();
-                login.Show();
-                this.Hide();
-            }
-            else;
-        }
-
-        private void button1Examen_Click(object sender, EventArgs e)
-        {
+            Cerrarformulario();
+            panelP2.BringToFront();
+            PanelExamenEsconder();
+            iconButtonCerrar.Visible = true;
             comboBox1.Visible = false;
             PanelColoresAtras();
-            Abrirformulario<Form_Estudio>(Variables.Opcion);
+            PanelEstudiarMostrar();
+            PanelCapitulo();
+            PanelEstudio();
         }
 
-        private void iconPictureBox2_Click(object sender, EventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            comboBox1.Visible = true;
         }
 
-        private void iconPictureBox3_Click(object sender, EventArgs e)
+        private void iconButtonSena_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            Abrirformulario<Form_Senales>(Variables.Opcion);
+            iconButtonCerrar.Visible = true;
+            iconButtonCerrar.BringToFront();
         }
 
-        private void buttonRefresh_Click(object sender, EventArgs e)
+        private void iconButtonExa_Click(object sender, EventArgs e)
         {
-            panelP2.BringToFront();
-            PanelColoresAtras();
             Cerrarformulario();
-            labelscore.Text = Convert.ToString(Variables.Process);
+            panelP2.BringToFront();
+            iconButtonCerrar.Visible = true;
+            comboBox1.Visible = false;
+            PanelEstudiarEsconder();
+            PanelColoresAtras();
+            PanelExamenMostrar();
+            PanelExaley();
+            PanelExasena();
+        }
+
+        private void iconButtonExaley_Click(object sender, EventArgs e)
+        {
+            Abrirformulario<Form_Excap>(Variables.Opcion);
+        }
+
+        private void iconButtonExasena_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButtonCap_MouseEnter(object sender, EventArgs e)
+        {
+            CapMouseEnter();
+        }
+
+        private void iconButtonCap_MouseLeave(object sender, EventArgs e)
+        {
+            CapMouseLeave();
+        }
+
+        private void iconButtonSena_MouseEnter(object sender, EventArgs e)
+        {
+            EstMouseEnter();
+        }
+
+        private void iconButtonSena_MouseLeave(object sender, EventArgs e)
+        {
+            EstMouseLeave();
+        }
+
+        private void iconButtonExaley_MouseEnter(object sender, EventArgs e)
+        {
+            ExaleyMouseEnter();
+        }
+
+        private void iconButtonExaley_MouseLeave(object sender, EventArgs e)
+        {
+            ExaleyMouseLeave();
+        }
+
+        private void iconButtonExasena_MouseEnter(object sender, EventArgs e)
+        {
+            ExasenaMouseEnter();
+        }
+
+        private void iconButtonExasena_MouseLeave(object sender, EventArgs e)
+        {
+            ExasenaMouseLeave();
         }
         #endregion
+
+        #region->Funciones para crear paneles
+        Panel panelCapi = new Panel();
+        PictureBox pictureBoxCap = new PictureBox();
+        Panel panelEstudio = new Panel();
+        PictureBox pictureBoxEstudio = new PictureBox();
+
+        public void PanelCapitulo()
+        {
+            panelCapi.Location = new Point(33, 105);
+            panelCapi.Size = new Size(278, 343);
+
+            pictureBoxCap.Location = new Point(4, 4);
+            pictureBoxCap.Size = new Size(270, 334);
+       
+            panelCapi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+
+            pictureBoxCap.Image = Image.FromFile(@"C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\Resources\Animacion 2.0.gif");
+            pictureBoxCap.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxCap.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxCap.Click += new System.EventHandler(this.pictureBoxCap_Click);
+            pictureBoxCap.MouseEnter += new System.EventHandler(this.pictureBoxCap_MouseEnter);
+            pictureBoxCap.MouseLeave += new System.EventHandler(this.pictureBoxCap_MouseLeave);
+            panelCapi.BackColor = Colores.PanelSuperior;
+            panelCapi.Visible = true;
+            panelCapi.BringToFront();
+            this.panelP2.Controls.Add(panelCapi);          
+            panelCapi.Controls.Add(pictureBoxCap);
+        }
+
+        private void pictureBoxCap_Click(object sender, EventArgs e)
+        {
+            comboBox1.Visible = true;
+        }
+
+        private void pictureBoxEstudio_Click(object sender, EventArgs e)
+        {
+            Abrirformulario<Form_Senales>(Variables.Opcion);
+        }
+        public void CapMouseEnter()
+        {
+            this.panelCapi.Size = new Size(288, 353);
+            this.iconButtonCap.Size = new Size(288, 66);
+            this.pictureBoxCap.Size = new Size(280, 344);
+            if (Variables.Opcion == "White") { panelCapi.BackColor = Color.Black; }
+            else { panelCapi.BackColor = Color.WhiteSmoke; }
+        }
+
+        public void CapMouseLeave()
+        {
+            this.panelCapi.Size = new Size(278, 343);
+            this.iconButtonCap.Size = new Size(278, 66);
+            this.pictureBoxCap.Size = new Size(270, 334);
+            panelCapi.BackColor = Color.Transparent;
+        }
+        private void pictureBoxCap_MouseEnter(object sender, EventArgs e)
+        {
+            CapMouseEnter();
+        }
+        private void pictureBoxCap_MouseLeave(object sender, EventArgs e)
+        {
+            CapMouseLeave();
+        }
+
+        public void PanelEstudio()
+        {          
+            panelEstudio.Location = new Point(352, 105);
+            panelEstudio.Size = new Size(278, 343);
+
+            pictureBoxEstudio.Location = new Point(4, 4);
+            pictureBoxEstudio.Size = new Size(270, 334);
+            panelEstudio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            pictureBoxEstudio.Image = Image.FromFile(@"C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\Resources\Animacion 2.0.gif");
+            pictureBoxEstudio.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEstudio.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxEstudio.Click += new System.EventHandler(this.pictureBoxEstudio_Click);
+            pictureBoxEstudio.MouseEnter += new System.EventHandler(this.pictureBoxEstudio_MouseEnter);
+            pictureBoxEstudio.MouseLeave += new System.EventHandler(this.pictureBoxEstudio_MouseLeave);
+            panelEstudio.BackColor = Colores.PanelSuperior;
+            panelEstudio.Visible = true;
+            panelEstudio.BringToFront();
+            this.panelP2.Controls.Add(panelEstudio);
+            panelEstudio.Controls.Add(pictureBoxEstudio);
+        }
+
+        public void EstMouseEnter()
+        {
+            this.panelEstudio.Size = new Size(288, 353);
+            this.iconButtonSena.Size = new Size(288, 66);
+            this.pictureBoxEstudio.Size = new Size(280, 344);
+            if (Variables.Opcion == "White") { panelEstudio.BackColor = Color.Black; }
+            else { panelEstudio.BackColor = Color.WhiteSmoke; }
+        }
+
+        public void EstMouseLeave()
+        {
+            this.panelEstudio.Size = new Size(278, 343);
+            this.iconButtonSena.Size = new Size(278, 66);
+            this.pictureBoxEstudio.Size = new Size(270, 334);
+            panelEstudio.BackColor = Color.Transparent;
+        }
+        private void pictureBoxEstudio_MouseEnter(object sender, EventArgs e)
+        {
+            EstMouseEnter();
+        }
+        private void pictureBoxEstudio_MouseLeave(object sender, EventArgs e)
+        {
+            EstMouseLeave();
+        }
+
+        Panel panelexaley = new Panel();
+        PictureBox pictureBoxexaley = new PictureBox();
+        Panel panelexasena = new Panel();
+        PictureBox pictureBoxexasena = new PictureBox();
+
+        public void PanelExaley()
+        {
+            panelexaley.Location = new Point(33, 105);
+            panelexaley.Size = new Size(278, 343);
+            pictureBoxexaley.Location = new Point(4, 4);
+            pictureBoxexaley.Size = new Size(270, 334);         
+            panelexaley.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            pictureBoxexaley.Image = Image.FromFile(@"C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\Resources\Animacion 2.0.gif");
+            pictureBoxexaley.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxexaley.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxexaley.Click += new System.EventHandler(this.pictureBoxexaley_Click);
+            pictureBoxexaley.MouseEnter += new System.EventHandler(this.pictureBoxexaley_MouseEnter);
+            pictureBoxexaley.MouseLeave += new System.EventHandler(this.pictureBoxexaley_MouseLeave);
+            panelexaley.BackColor = Colores.PanelSuperior;
+            panelexaley.Visible = true;
+            panelexaley.BringToFront();               
+            this.panelP2.Controls.Add(panelexaley);       
+            panelexaley.Controls.Add(pictureBoxexaley);
+        }
+        private void pictureBoxexaley_Click(object sender, EventArgs e)
+        {
+            Abrirformulario<Form_Excap>(Variables.Opcion);
+        }
+
+        public void ExaleyMouseEnter()
+        {
+            this.panelexaley.Size = new Size(288, 353);
+            this.iconButtonExaley.Size = new Size(288, 66);
+            this.pictureBoxexaley.Size = new Size(280, 344);
+            if (Variables.Opcion == "White") { panelexaley.BackColor = Color.Black; }
+            else { panelexaley.BackColor = Color.WhiteSmoke; }
+        }
+
+        public void ExaleyMouseLeave()
+        {
+            this.panelexaley.Size = new Size(278, 343);
+            this.iconButtonExaley.Size = new Size(278, 66);
+            this.pictureBoxexaley.Size = new Size(270, 334);
+            panelexaley.BackColor = Color.Transparent;
+        }
+
+        private void pictureBoxexaley_MouseEnter(object sender, EventArgs e)
+        {
+            ExaleyMouseEnter();
+        }
+        private void pictureBoxexaley_MouseLeave(object sender, EventArgs e)
+        {
+            ExaleyMouseLeave();
+        }
+
+        public void PanelExasena()
+        {           
+            panelexasena.Location = new Point(352, 105);
+            panelexasena.Size = new Size(278, 343);
+            pictureBoxexasena.Location = new Point(4, 4);
+            pictureBoxexasena.Size = new Size(270, 334);
+            panelexasena.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            pictureBoxexasena.Image = Image.FromFile(@"C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\Resources\Animacion 2.0.gif");
+            pictureBoxexasena.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxexasena.Cursor = System.Windows.Forms.Cursors.Hand;
+            pictureBoxexasena.Click += new System.EventHandler(this.pictureBoxexasen_Click);
+            pictureBoxexasena.MouseEnter += new System.EventHandler(this.pictureBoxexasena_MouseEnter);
+            pictureBoxexasena.MouseLeave += new System.EventHandler(this.pictureBoxexasena_MouseLeave);
+            panelexasena.BackColor = Colores.PanelSuperior;
+            panelexasena.Visible = true;
+            panelexasena.BringToFront();          
+            this.panelP2.Controls.Add(panelexasena);            
+            panelexasena.Controls.Add(pictureBoxexasena);
+        }
+
+        private void pictureBoxexasen_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("En proceso");
+        }
+
+        public void ExasenaMouseEnter()
+        {
+            this.panelexasena.Size = new Size(288, 353);
+            this.iconButtonExasena.Size = new Size(288, 66);
+            this.pictureBoxexasena.Size = new Size(280, 344);
+            if (Variables.Opcion == "White") { panelexasena.BackColor = Color.Black; }
+            else { panelexasena.BackColor = Color.WhiteSmoke; }
+        }
+
+        public void ExasenaMouseLeave()
+        {
+            this.panelexasena.Size = new Size(278, 343);
+            this.iconButtonExasena.Size = new Size(278, 66);
+            this.pictureBoxexasena.Size = new Size(270, 334);
+            panelexasena.BackColor = Color.Transparent;
+        }
+
+        private void pictureBoxexasena_MouseEnter(object sender, EventArgs e)
+        {
+            ExasenaMouseEnter();
+        }
+        private void pictureBoxexasena_MouseLeave(object sender, EventArgs e)
+        {
+            ExasenaMouseLeave();
+        }
+
+        #endregion
+
+        private void iconButtonCerrar_Click(object sender, EventArgs e)
+        {
+            iconButtonCerrar.Visible = false;
+            comboBox1.Visible = false;
+            panelP2.BringToFront();
+            PanelEstudiarEsconder();
+            PanelExamenEsconder();
+            PanelColoresAtras();
+            Cerrarformulario();
+            labelscorecap.Text = Convert.ToString(Variables.Process);
+        }
     }
 }

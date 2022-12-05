@@ -7,9 +7,9 @@
     <description>Package Description</description>
     <dependencies>
       <group targetFramework="net6.0-windows7.0">
-        <dependency id="BASEDATOS" version="1.0.0" exclude="Build,Analyzers" />
-        <dependency id="Funcion" version="1.0.0" exclude="Build,Analyzers" />
         <dependency id="FontAwesome.Sharp" version="5.15.4" exclude="Build,Analyzers" />
+        <dependency id="MySql.Data" version="8.0.31" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SqlClient" version="4.8.4" exclude="Build,Analyzers" />
       </group>
     </dependencies>
     <frameworkReferences>

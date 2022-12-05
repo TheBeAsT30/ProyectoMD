@@ -174,6 +174,16 @@ namespace MD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pixil_frame_0 {
+            get {
+                object obj = ResourceManager.GetObject("pixil-frame-0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngegg {
             get {
                 object obj = ResourceManager.GetObject("pngegg", resourceCulture);

@@ -48,11 +48,9 @@ C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-window
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD.Form_Register.resources
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD.Form_Recuperar.resources
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD.Form_NuevoPass.resources
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD.Form_Test.resources
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD..resources
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD.Form_y.resources
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD.Form_Capitulos.resources
-C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD.Form_Estudio.resources
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\bin\Debug\net6.0-windows\Google.Protobuf.dll
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
@@ -60,3 +58,6 @@ C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\bin\Debug\net6.0-window
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\bin\Debug\net6.0-windows\MySql.Data.dll
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\bin\Debug\net6.0-windows\ZstdNet.dll
 C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\GUI_Moderno.FormPresentacion.resources
+C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD.Form_Excap.resources
+C:\Users\GUEVARA-JARQUIN\source\repos\Clon\ProyectoMD\MD\obj\Debug\net6.0-windows\MD.Form_Senales.resources

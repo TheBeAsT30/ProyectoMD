@@ -155,6 +155,8 @@
             this.label29 = new System.Windows.Forms.Label();
             this.listBoxCap12 = new System.Windows.Forms.ListBox();
             this.iconButtonBeforeCap11_12 = new FontAwesome.Sharp.IconButton();
+            this.label30 = new System.Windows.Forms.Label();
+            this.iconButtonCerrar = new FontAwesome.Sharp.IconButton();
             this.panelPrincipal.SuspendLayout();
             this.panelPrincipal2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data4ruedas)).BeginInit();
@@ -2280,6 +2282,8 @@
             this.panelPrincipal14.Controls.Add(this.label29);
             this.panelPrincipal14.Controls.Add(this.listBoxCap12);
             this.panelPrincipal14.Controls.Add(this.iconButtonBeforeCap11_12);
+            this.panelPrincipal14.Controls.Add(this.label30);
+            this.panelPrincipal14.Controls.Add(this.iconButtonCerrar);
             this.panelPrincipal14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrincipal14.Location = new System.Drawing.Point(11, 0);
             this.panelPrincipal14.Name = "panelPrincipal14";
@@ -2403,7 +2407,34 @@
             this.iconButtonBeforeCap11_12.UseVisualStyleBackColor = true;
             this.iconButtonBeforeCap11_12.Click += new System.EventHandler(this.iconButtonBeforeCap11_12_Click);
             // 
-            // Form_cap
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(84, 937);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(445, 15);
+            this.label30.TabIndex = 24;
+            this.label30.Text = "                                                                                 " +
+    "                                                                 ";
+            // 
+            // iconButtonCerrar
+            // 
+            this.iconButtonCerrar.FlatAppearance.BorderSize = 0;
+            this.iconButtonCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCerrar.IconChar = FontAwesome.Sharp.IconChar.DoorClosed;
+            this.iconButtonCerrar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonCerrar.IconSize = 15;
+            this.iconButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonCerrar.Location = new System.Drawing.Point(535, 940);
+            this.iconButtonCerrar.Name = "iconButtonCerrar";
+            this.iconButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.iconButtonCerrar.TabIndex = 25;
+            this.iconButtonCerrar.Text = "Cerrar";
+            this.iconButtonCerrar.UseVisualStyleBackColor = true;
+            this.iconButtonCerrar.Click += new System.EventHandler(this.iconButtonCerrar_Click);
+            // 
+            // Form_Capitulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2424,7 +2455,7 @@
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panelL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_cap";
+            this.Name = "Form_Capitulos";
             this.Text = "Form_temas";
             this.Load += new System.EventHandler(this.Form_temas_Load);
             this.panelPrincipal.ResumeLayout(false);
@@ -2597,5 +2628,7 @@
         private Label label29;
         private FontAwesome.Sharp.IconButton iconButtonBeforeCap11_12;
         private ListBox listBoxCap12;
+        private Label label30;
+        private FontAwesome.Sharp.IconButton iconButtonCerrar;
     }
 }

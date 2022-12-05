@@ -32,16 +32,21 @@
             this.Minimizar = new FontAwesome.Sharp.IconPictureBox();
             this.Cerrar = new FontAwesome.Sharp.IconPictureBox();
             this.PanelL = new System.Windows.Forms.Panel();
-            this.labelscore = new System.Windows.Forms.Label();
-            this.button1Examen = new System.Windows.Forms.Button();
-            this.Return = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.buttonestudio = new System.Windows.Forms.Button();
+            this.iconButtonRegresar = new FontAwesome.Sharp.IconButton();
+            this.iconButtonTemas = new FontAwesome.Sharp.IconButton();
+            this.iconButtonExa = new FontAwesome.Sharp.IconButton();
+            this.iconButtonEstudiar = new FontAwesome.Sharp.IconButton();
+            this.labelscorecap = new System.Windows.Forms.Label();
             this.labellastname = new System.Windows.Forms.Label();
             this.labelname = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.Tema = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelP2 = new System.Windows.Forms.Panel();
+            this.iconButtonCerrar = new FontAwesome.Sharp.IconButton();
+            this.iconButtonExasena = new FontAwesome.Sharp.IconButton();
+            this.iconButtonExaley = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSena = new FontAwesome.Sharp.IconButton();
+            this.iconButtonCap = new FontAwesome.Sharp.IconButton();
             this.PanelCafe = new System.Windows.Forms.Panel();
             this.pictureBoxCafe = new System.Windows.Forms.PictureBox();
             this.PanelAzul = new System.Windows.Forms.Panel();
@@ -61,12 +66,13 @@
             this.PanelVerde = new System.Windows.Forms.Panel();
             this.pictureBoxVerde = new System.Windows.Forms.PictureBox();
             this.PanelP = new System.Windows.Forms.Panel();
-            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.labelscoreexa = new System.Windows.Forms.Label();
             this.PanelS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Cerrar)).BeginInit();
             this.PanelL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panelP2.SuspendLayout();
             this.PanelCafe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCafe)).BeginInit();
             this.PanelAzul.SuspendLayout();
@@ -132,16 +138,15 @@
             // PanelL
             // 
             this.PanelL.BackColor = System.Drawing.Color.LightGray;
-            this.PanelL.Controls.Add(this.buttonRefresh);
-            this.PanelL.Controls.Add(this.labelscore);
-            this.PanelL.Controls.Add(this.button1Examen);
-            this.PanelL.Controls.Add(this.Return);
-            this.PanelL.Controls.Add(this.comboBox1);
-            this.PanelL.Controls.Add(this.buttonestudio);
+            this.PanelL.Controls.Add(this.labelscoreexa);
+            this.PanelL.Controls.Add(this.iconButtonRegresar);
+            this.PanelL.Controls.Add(this.iconButtonTemas);
+            this.PanelL.Controls.Add(this.iconButtonExa);
+            this.PanelL.Controls.Add(this.iconButtonEstudiar);
+            this.PanelL.Controls.Add(this.labelscorecap);
             this.PanelL.Controls.Add(this.labellastname);
             this.PanelL.Controls.Add(this.labelname);
             this.PanelL.Controls.Add(this.iconPictureBox1);
-            this.PanelL.Controls.Add(this.Tema);
             this.PanelL.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelL.Location = new System.Drawing.Point(0, 42);
             this.PanelL.Name = "PanelL";
@@ -149,80 +154,86 @@
             this.PanelL.TabIndex = 1;
             this.PanelL.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelL_MouseMove);
             // 
-            // labelscore
+            // iconButtonRegresar
             // 
-            this.labelscore.AutoSize = true;
-            this.labelscore.Location = new System.Drawing.Point(100, 38);
-            this.labelscore.Name = "labelscore";
-            this.labelscore.Size = new System.Drawing.Size(35, 15);
-            this.labelscore.TabIndex = 10;
-            this.labelscore.Text = "score";
+            this.iconButtonRegresar.FlatAppearance.BorderSize = 0;
+            this.iconButtonRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonRegresar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonRegresar.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+            this.iconButtonRegresar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonRegresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonRegresar.IconSize = 40;
+            this.iconButtonRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonRegresar.Location = new System.Drawing.Point(7, 396);
+            this.iconButtonRegresar.Name = "iconButtonRegresar";
+            this.iconButtonRegresar.Size = new System.Drawing.Size(214, 54);
+            this.iconButtonRegresar.TabIndex = 15;
+            this.iconButtonRegresar.Text = "Regresar";
+            this.iconButtonRegresar.UseVisualStyleBackColor = true;
+            this.iconButtonRegresar.Click += new System.EventHandler(this.iconButtonRegresar_Click);
             // 
-            // button1Examen
+            // iconButtonTemas
             // 
-            this.button1Examen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1Examen.FlatAppearance.BorderSize = 0;
-            this.button1Examen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1Examen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1Examen.Location = new System.Drawing.Point(7, 200);
-            this.button1Examen.Name = "button1Examen";
-            this.button1Examen.Size = new System.Drawing.Size(214, 37);
-            this.button1Examen.TabIndex = 9;
-            this.button1Examen.Text = "Estudios";
-            this.button1Examen.UseVisualStyleBackColor = true;
-            this.button1Examen.Click += new System.EventHandler(this.button1Examen_Click);
+            this.iconButtonTemas.FlatAppearance.BorderSize = 0;
+            this.iconButtonTemas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonTemas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonTemas.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.iconButtonTemas.IconColor = System.Drawing.Color.Black;
+            this.iconButtonTemas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonTemas.IconSize = 40;
+            this.iconButtonTemas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonTemas.Location = new System.Drawing.Point(7, 301);
+            this.iconButtonTemas.Name = "iconButtonTemas";
+            this.iconButtonTemas.Size = new System.Drawing.Size(214, 54);
+            this.iconButtonTemas.TabIndex = 14;
+            this.iconButtonTemas.Text = "Temas";
+            this.iconButtonTemas.UseVisualStyleBackColor = true;
+            this.iconButtonTemas.Click += new System.EventHandler(this.iconButtonTemas_Click);
             // 
-            // Return
+            // iconButtonExa
             // 
-            this.Return.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Return.FlatAppearance.BorderSize = 0;
-            this.Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Return.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Return.Location = new System.Drawing.Point(7, 416);
-            this.Return.Name = "Return";
-            this.Return.Size = new System.Drawing.Size(214, 37);
-            this.Return.TabIndex = 8;
-            this.Return.Text = "Regresar";
-            this.Return.UseVisualStyleBackColor = true;
-            this.Return.Click += new System.EventHandler(this.Return_Click);
+            this.iconButtonExa.FlatAppearance.BorderSize = 0;
+            this.iconButtonExa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonExa.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonExa.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
+            this.iconButtonExa.IconColor = System.Drawing.Color.Black;
+            this.iconButtonExa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonExa.IconSize = 40;
+            this.iconButtonExa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonExa.Location = new System.Drawing.Point(7, 206);
+            this.iconButtonExa.Name = "iconButtonExa";
+            this.iconButtonExa.Size = new System.Drawing.Size(214, 54);
+            this.iconButtonExa.TabIndex = 13;
+            this.iconButtonExa.Text = "Pruebas";
+            this.iconButtonExa.UseVisualStyleBackColor = true;
+            this.iconButtonExa.Click += new System.EventHandler(this.iconButtonExa_Click);
             // 
-            // comboBox1
+            // iconButtonEstudiar
             // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Capítulo 1",
-            "Capítulo 2",
-            "Capítulo 3",
-            "Capítulo 4",
-            "Capítulo 5",
-            "Capítulo 6",
-            "Capítulo 7",
-            "Capítulo 8",
-            "Capítulo 9",
-            "Capítulo 10",
-            "Capítulo 11",
-            "Capítulo 12"});
-            this.comboBox1.Location = new System.Drawing.Point(7, 171);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(214, 23);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Visible = false;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.iconButtonEstudiar.FlatAppearance.BorderSize = 0;
+            this.iconButtonEstudiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonEstudiar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonEstudiar.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
+            this.iconButtonEstudiar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonEstudiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonEstudiar.IconSize = 40;
+            this.iconButtonEstudiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonEstudiar.Location = new System.Drawing.Point(7, 111);
+            this.iconButtonEstudiar.Name = "iconButtonEstudiar";
+            this.iconButtonEstudiar.Size = new System.Drawing.Size(214, 54);
+            this.iconButtonEstudiar.TabIndex = 12;
+            this.iconButtonEstudiar.Text = "Estudiar";
+            this.iconButtonEstudiar.UseVisualStyleBackColor = true;
+            this.iconButtonEstudiar.Click += new System.EventHandler(this.iconButtonEstudiar_Click);
             // 
-            // buttonestudio
+            // labelscorecap
             // 
-            this.buttonestudio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.buttonestudio.FlatAppearance.BorderSize = 0;
-            this.buttonestudio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonestudio.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonestudio.Location = new System.Drawing.Point(7, 128);
-            this.buttonestudio.Name = "buttonestudio";
-            this.buttonestudio.Size = new System.Drawing.Size(214, 37);
-            this.buttonestudio.TabIndex = 6;
-            this.buttonestudio.Text = "Capítulos";
-            this.buttonestudio.UseVisualStyleBackColor = true;
-            this.buttonestudio.Click += new System.EventHandler(this.buttonestudio_Click);
+            this.labelscorecap.AutoSize = true;
+            this.labelscorecap.Location = new System.Drawing.Point(100, 38);
+            this.labelscorecap.Name = "labelscorecap";
+            this.labelscorecap.Size = new System.Drawing.Size(54, 15);
+            this.labelscorecap.TabIndex = 10;
+            this.labelscorecap.Text = "scorecap";
             // 
             // labellastname
             // 
@@ -256,27 +267,147 @@
             this.iconPictureBox1.TabIndex = 2;
             this.iconPictureBox1.TabStop = false;
             // 
-            // Tema
+            // comboBox1
             // 
-            this.Tema.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Tema.FlatAppearance.BorderSize = 0;
-            this.Tema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Tema.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Tema.Location = new System.Drawing.Point(7, 272);
-            this.Tema.Name = "Tema";
-            this.Tema.Size = new System.Drawing.Size(214, 37);
-            this.Tema.TabIndex = 0;
-            this.Tema.Text = "Temas";
-            this.Tema.UseVisualStyleBackColor = true;
-            this.Tema.Click += new System.EventHandler(this.Tema_Click);
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Capítulo 1",
+            "Capítulo 2",
+            "Capítulo 3",
+            "Capítulo 4",
+            "Capítulo 5",
+            "Capítulo 6",
+            "Capítulo 7",
+            "Capítulo 8",
+            "Capítulo 9",
+            "Capítulo 10",
+            "Capítulo 11",
+            "Capítulo 12"});
+            this.comboBox1.Location = new System.Drawing.Point(33, 452);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(278, 23);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Visible = false;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panelP2
             // 
+            this.panelP2.Controls.Add(this.iconButtonCerrar);
+            this.panelP2.Controls.Add(this.iconButtonExasena);
+            this.panelP2.Controls.Add(this.iconButtonExaley);
+            this.panelP2.Controls.Add(this.iconButtonSena);
+            this.panelP2.Controls.Add(this.iconButtonCap);
+            this.panelP2.Controls.Add(this.comboBox1);
             this.panelP2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelP2.Location = new System.Drawing.Point(227, 0);
             this.panelP2.Name = "panelP2";
             this.panelP2.Size = new System.Drawing.Size(655, 549);
             this.panelP2.TabIndex = 11;
+            // 
+            // iconButtonCerrar
+            // 
+            this.iconButtonCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonCerrar.FlatAppearance.BorderSize = 0;
+            this.iconButtonCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonCerrar.IconChar = FontAwesome.Sharp.IconChar.DoorClosed;
+            this.iconButtonCerrar.IconColor = System.Drawing.Color.Black;
+            this.iconButtonCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonCerrar.IconSize = 35;
+            this.iconButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonCerrar.Location = new System.Drawing.Point(555, 508);
+            this.iconButtonCerrar.Name = "iconButtonCerrar";
+            this.iconButtonCerrar.Size = new System.Drawing.Size(92, 29);
+            this.iconButtonCerrar.TabIndex = 17;
+            this.iconButtonCerrar.Text = "Cerrar";
+            this.iconButtonCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCerrar.UseVisualStyleBackColor = true;
+            this.iconButtonCerrar.Click += new System.EventHandler(this.iconButtonCerrar_Click);
+            // 
+            // iconButtonExasena
+            // 
+            this.iconButtonExasena.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonExasena.FlatAppearance.BorderSize = 0;
+            this.iconButtonExasena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonExasena.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonExasena.IconChar = FontAwesome.Sharp.IconChar.TrafficLight;
+            this.iconButtonExasena.IconColor = System.Drawing.Color.Black;
+            this.iconButtonExasena.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonExasena.IconSize = 40;
+            this.iconButtonExasena.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonExasena.Location = new System.Drawing.Point(352, 38);
+            this.iconButtonExasena.Name = "iconButtonExasena";
+            this.iconButtonExasena.Size = new System.Drawing.Size(278, 66);
+            this.iconButtonExasena.TabIndex = 16;
+            this.iconButtonExasena.Text = "Exámen de Señales";
+            this.iconButtonExasena.UseVisualStyleBackColor = true;
+            this.iconButtonExasena.Click += new System.EventHandler(this.iconButtonExasena_Click);
+            this.iconButtonExasena.MouseEnter += new System.EventHandler(this.iconButtonExasena_MouseEnter);
+            this.iconButtonExasena.MouseLeave += new System.EventHandler(this.iconButtonExasena_MouseLeave);
+            // 
+            // iconButtonExaley
+            // 
+            this.iconButtonExaley.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonExaley.FlatAppearance.BorderSize = 0;
+            this.iconButtonExaley.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonExaley.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonExaley.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.iconButtonExaley.IconColor = System.Drawing.Color.Black;
+            this.iconButtonExaley.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonExaley.IconSize = 40;
+            this.iconButtonExaley.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonExaley.Location = new System.Drawing.Point(33, 38);
+            this.iconButtonExaley.Name = "iconButtonExaley";
+            this.iconButtonExaley.Size = new System.Drawing.Size(278, 66);
+            this.iconButtonExaley.TabIndex = 15;
+            this.iconButtonExaley.Text = "Exámen de leyes";
+            this.iconButtonExaley.UseVisualStyleBackColor = true;
+            this.iconButtonExaley.Click += new System.EventHandler(this.iconButtonExaley_Click);
+            this.iconButtonExaley.MouseEnter += new System.EventHandler(this.iconButtonExaley_MouseEnter);
+            this.iconButtonExaley.MouseLeave += new System.EventHandler(this.iconButtonExaley_MouseLeave);
+            // 
+            // iconButtonSena
+            // 
+            this.iconButtonSena.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonSena.FlatAppearance.BorderSize = 0;
+            this.iconButtonSena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSena.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonSena.IconChar = FontAwesome.Sharp.IconChar.TrafficLight;
+            this.iconButtonSena.IconColor = System.Drawing.Color.Black;
+            this.iconButtonSena.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSena.IconSize = 40;
+            this.iconButtonSena.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonSena.Location = new System.Drawing.Point(352, 38);
+            this.iconButtonSena.Name = "iconButtonSena";
+            this.iconButtonSena.Size = new System.Drawing.Size(278, 66);
+            this.iconButtonSena.TabIndex = 14;
+            this.iconButtonSena.Text = "Señales de tránsito";
+            this.iconButtonSena.UseVisualStyleBackColor = true;
+            this.iconButtonSena.Click += new System.EventHandler(this.iconButtonSena_Click);
+            this.iconButtonSena.MouseEnter += new System.EventHandler(this.iconButtonSena_MouseEnter);
+            this.iconButtonSena.MouseLeave += new System.EventHandler(this.iconButtonSena_MouseLeave);
+            // 
+            // iconButtonCap
+            // 
+            this.iconButtonCap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonCap.FlatAppearance.BorderSize = 0;
+            this.iconButtonCap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCap.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iconButtonCap.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.iconButtonCap.IconColor = System.Drawing.Color.Black;
+            this.iconButtonCap.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonCap.IconSize = 40;
+            this.iconButtonCap.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonCap.Location = new System.Drawing.Point(33, 38);
+            this.iconButtonCap.Name = "iconButtonCap";
+            this.iconButtonCap.Size = new System.Drawing.Size(278, 66);
+            this.iconButtonCap.TabIndex = 13;
+            this.iconButtonCap.Text = "Ley 431";
+            this.iconButtonCap.UseVisualStyleBackColor = true;
+            this.iconButtonCap.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButtonCap.MouseEnter += new System.EventHandler(this.iconButtonCap_MouseEnter);
+            this.iconButtonCap.MouseLeave += new System.EventHandler(this.iconButtonCap_MouseLeave);
             // 
             // PanelCafe
             // 
@@ -496,19 +627,14 @@
             this.PanelP.TabIndex = 1;
             this.PanelP.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PanelP_MouseMove);
             // 
-            // buttonRefresh
+            // labelscoreexa
             // 
-            this.buttonRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.buttonRefresh.FlatAppearance.BorderSize = 0;
-            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefresh.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonRefresh.Location = new System.Drawing.Point(7, 344);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(214, 37);
-            this.buttonRefresh.TabIndex = 11;
-            this.buttonRefresh.Text = "Refrescar";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            this.labelscoreexa.AutoSize = true;
+            this.labelscoreexa.Location = new System.Drawing.Point(102, 53);
+            this.labelscoreexa.Name = "labelscoreexa";
+            this.labelscoreexa.Size = new System.Drawing.Size(52, 15);
+            this.labelscoreexa.TabIndex = 16;
+            this.labelscoreexa.Text = "scoreexa";
             // 
             // Form_principal
             // 
@@ -530,6 +656,7 @@
             this.PanelL.ResumeLayout(false);
             this.PanelL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panelP2.ResumeLayout(false);
             this.PanelCafe.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCafe)).EndInit();
             this.PanelAzul.ResumeLayout(false);
@@ -557,17 +684,12 @@
 
         public System.Windows.Forms.Panel PanelS;
         private System.Windows.Forms.Panel PanelL;
-        private Button Tema;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label labellastname;
         private Label labelname;
-        private Button buttonestudio;
         private ComboBox comboBox1;
-        private Button Return;
         private Panel PanelCafe;
-        private PictureBox pictureBoxCafe;
         private Panel PanelAzul;
-        private PictureBox pictureBoxAzul;
         private Panel PanelMorado;
         private PictureBox pictureBoxMorado;
         private Panel PanelRojo;
@@ -584,10 +706,21 @@
         private PictureBox pictureBoxVerde;
         private Panel PanelP;
         private Panel panelP2;
-        private Button button1Examen;
         private FontAwesome.Sharp.IconPictureBox Cerrar;
         private FontAwesome.Sharp.IconPictureBox Minimizar;
-        private Label labelscore;
-        private Button buttonRefresh;
+        private Label labelscorecap;
+        private PictureBox pictureBoxCafe;
+        private PictureBox pictureBoxAzul;
+        private FontAwesome.Sharp.IconButton iconButtonEstudiar;
+        private FontAwesome.Sharp.IconButton iconButtonCap;
+        private FontAwesome.Sharp.IconButton iconButtonSena;
+        private FontAwesome.Sharp.IconButton iconButtonExa;
+        private FontAwesome.Sharp.IconButton iconButtonTemas;
+        private FontAwesome.Sharp.IconButton iconButtonRegresar;
+        private FontAwesome.Sharp.IconButton iconButtonExasena;
+        private FontAwesome.Sharp.IconButton iconButtonExaley;
+        private FontAwesome.Sharp.IconButton iconButtonCerrar;
+        private Label labelscoreexa;
+        /*Agregados*/
     }
 }

@@ -14,7 +14,8 @@ namespace MD
         public static string NUser { get; set; }
         public static string Email { get; set; }
         public static string Password { get; set; }
-        public static int Process { get; set; }
+        public static int Processcap { get; set; }
+        public static int Processexa { get; set; }
 
         public static String Opcion;
 

@@ -77,7 +77,9 @@ namespace MD
                         dataReader = command.ExecuteReader();
                         if (dataReader.Read())
                         {
-
+                            GUI_Moderno.FormPresentacion pre = new GUI_Moderno.FormPresentacion();
+                            pre.ShowDialog();
+                            this.Hide();
                             Form_principal frm = new Form_principal();
                             frm.Show();
                             this.Hide();                                                        

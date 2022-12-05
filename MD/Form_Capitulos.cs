@@ -606,6 +606,11 @@ namespace MD
         private void iconButtonNextCap10_Click(object sender, EventArgs e)
         {
             panelPrincipal14.BringToFront();
+        }     
+
+        private void iconButtonCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         #endregion
     }
