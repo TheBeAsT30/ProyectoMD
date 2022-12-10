@@ -22,3 +22,6 @@ Como es logico, antes se hizo mencion a base de datos, por lo que es evidente qu
 lo que permite que cada uno de estos tengan un progreso distinto. Ademas contamos con una funcion de recuperacion de cuenta por si
 se te olvida la contraseña (Algo que suele ocurrir). Esto se logra de manera que enviamos un mensaje al correo que se ingreso en
 el registro con el codigo de recuperacion, hay que agregar que este mensaje llega en el apartado principal, no como spam.
+
+Ademas haciendo uso de los conocimientos adquiridos en Web realizamos una pagina en donde hay informacion
+sobre nuestro proyecto, y como usar la App haciendo de la misma casi que un centro de ayuda.
