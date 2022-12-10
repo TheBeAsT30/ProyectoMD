@@ -1,6 +1,7 @@
-ProyectoFinal CS50
+DRI-LI driving law instructor
+Proyecto Final CS50
 
-Nuestro proyecto lleva de nombre DRI-LI Driving Law Instructor
+Link Video:
 
 La App esta desarrollada en C# con Visual-Studio para la realización de toda la interfaz, funcionalidades, etc. Railway es una
 base de datos en la nube, la cual la implementamos para almacenar los datos necesarios de la App y Aseprite
